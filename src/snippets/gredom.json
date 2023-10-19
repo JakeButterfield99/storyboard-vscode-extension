@@ -1,0 +1,442 @@
+{
+    "gredom.CONTROL": {
+        "prefix": "gredom.CONTROL",
+        "description": "Model object enumeration for Control (0)",
+        "body": "gredom.CONTROL"
+    },
+    "gredom.TABLE": {
+        "prefix": "gredom.TABLE",
+        "description": "Model object enumeration for Table(1)",
+        "body": "gredom.TABLE"
+    },
+    "gredom.TEMPLATE": {
+        "prefix": "gredom.TEMPLATE",
+        "description": "Model object enumeration for Table Template (2)",
+        "body": "gredom.TEMPLATE"
+    },
+    "gredom.GROUP": {
+        "prefix": "gredom.GROUP",
+        "description": "Model object enumeration for Group (3)",
+        "body": "gredom.GROUP"
+    },
+    "gredom.LAYER": {
+        "prefix": "gredom.LAYER",
+        "description": "Model object enumeration for Layer(4)",
+        "body": "gredom.LAYER"
+    },
+    "gredom.LAYER_INSTANCE": {
+        "prefix": "gredom.LAYER_INSTANCE",
+        "description": "Model object enumeration for Layer Instance (5)",
+        "body": "gredom.LAYER_INSTANCE"
+    },
+    "gredom.SCREEN": {
+        "prefix": "gredom.SCREEN",
+        "description": "",
+        "body": "gredom.SCREEN"
+    },
+    "gredom.APP": {
+        "prefix": "gredom.APP",
+        "description": "Model object enumeration for Application (7)",
+        "body": "gredom.APP"
+    },
+    "gredom.get_application": {
+        "prefix": "gredom.get_application",
+        "description": "Get an object handle for the application root\n@return #domobject applicaiton The GREDOM object representing the application",
+        "body": "gredom.get_application()"
+    },
+    "gredom.get_object": {
+        "prefix": "gredom.get_object",
+        "description": "Get an object handle for the model object matching the specified fully qualified name.\n@param #string fqn The fully qualified name to the object to lookup\n@return #domobject object The GREDOM object if found, nil otherwise",
+        "body": "gredom.get_object(${1:fqn})"
+    },
+    "gredom.get_layers": {
+        "prefix": "gredom.get_layers",
+        "description": "Get a list of layers in the application\n@return #list<#layer>",
+        "body": "gredom.get_layers()"
+    },
+    "gredom.get_screens": {
+        "prefix": "gredom.get_screens",
+        "description": "Get a list of screens in the application\n@return #list<#screen>",
+        "body": "gredom.get_screens()"
+    },
+    "gredom.get_control": {
+        "prefix": "gredom.get_control",
+        "description": "If control is a @{#string} then a lookup will be performed.  If control is a @{#control}\nand the domobject represents a Storyboard Control then this method hehaves as a cast.\nReturns nil if the control cannot be found.\n@param #string control or #domobject\n@return #control control",
+        "body": "gredom.get_control(${1:control})"
+    },
+    "gredom.get_table": {
+        "prefix": "gredom.get_table",
+        "description": "If tablecontrol is a @{#string} then a lookup will be performed.  If tablecontrol is a @{#tablecontrol}\nand the domobject represents a Storyboard Table then this method hehaves as a cast.\nReturns nil if the table cannot be found.\n@param #string tablecontrol or #domobject tablecontrol\n@return #tablecontrol tablecontrol",
+        "body": "gredom.get_table(${1:tablecontrol})"
+    },
+    "gredom.get_group": {
+        "prefix": "gredom.get_group",
+        "description": "If group is a @{#string} then a lookup will be performed.  If group is a @{#group}\nand the domobject represents a Storyboard Group then this method hehaves as a cast.\nReturns nil if the group cannot be found.\n@param #string group or #domobject group\n@return #group group",
+        "body": "gredom.get_group(${1:group})"
+    },
+    "gredom.get_layer_instance": {
+        "prefix": "gredom.get_layer_instance",
+        "description": "If layerinstance is a @{#string} then a lookup will be performed.  If layerinstance is a @{#layerinstance}\nand the domobject represents a Storyboard Layer Instance then this method hehaves as a cast.\nReturns nil if the layer instance cannot be found.\n@param #string layerinstance or #domobject layerinstance\n@return #layerinstance layerinstance",
+        "body": "gredom.get_layer_instance(${1:layerinstance})"
+    },
+    "gredom.get_layer": {
+        "prefix": "gredom.get_layer",
+        "description": "If layer is a @{#string} then a lookup will be performed.  If layer is a @{#layer}\nand the domobject represents a Storyboard Layer then this method hehaves as a cast.\nReturns nil if the layer cannot be found.\n@param #string layer or #domobject layer\n@return #layer",
+        "body": "gredom.get_layer(${1:layer})"
+    },
+    "gredom.get_screen": {
+        "prefix": "gredom.get_screen",
+        "description": "If screen is a @{#string} then a lookup will be performed.  If screen is a @{#screen}\nand the domobject represents a Storyboard Screen then this method hehaves as a cast. Returns\nnil if the screen cannot be found.\n@param #string screen or #screen screen\n@return #screen",
+        "body": "gredom.get_screen(${1:screen})"
+    },
+    "domobject.get_name": {
+        "prefix": "domobject.get_name",
+        "description": "Gets the name of the specified DOM Object\n@param #domobject self\n@return #string name",
+        "body": "domobject.get_name(${1:self})"
+    },
+    "domobject.get_type": {
+        "prefix": "domobject.get_type",
+        "description": "Gets the Storyboard type of the specified DOMOBJECT.\nThe type may be one of gredom.APP, gredom.SCREEN, gredom.LAYER, gredom.LAYER_INSTANCE,\ngredom.GROUP, gredom.CONTROL, gredom.TABLE, gredom.TEMPLATE.\n@param #domobject self\n@return #number type : gredom.APP, gredom.SCREEN, gredom.LAYER, gredom.LAYER_INSTANCE, gredom.GROUP, gredom.CONTROL, gredom.TABLE or gredom.TEMPLATE",
+        "body": "domobject.get_type(${1:self})"
+    },
+    "domobject.get_parents": {
+        "prefix": "domobject.get_parents",
+        "description": "Gets the parent DOMOBJECT objects for the specified DOMOBJECT. An array ofparents is returned\nbecause in some cases, such as for a layer, there may be more thanone parent representation.\n@param #domobject self\n@return #list<#domobject>",
+        "body": "domobject.get_parents(${1:self})"
+    },
+    "domobject.get_children": {
+        "prefix": "domobject.get_children",
+        "description": "Gets the child DOMOBJECT objects for the specified DOMOBJECT.\nThis function returns only the model objects and does not include the variables.\n@param #domobject self\n@return #list<#domobject>",
+        "body": "domobject.get_children(${1:self})"
+    },
+    "domobject.get_variables": {
+        "prefix": "domobject.get_variables",
+        "description": "Gets variables associated with the specified DOMOBJECT\n@param #domobject self\n@return #list<#string> variables : A list of variable names",
+        "body": "domobject.get_variables(${1:self})"
+    },
+    "domobject.get_value": {
+        "prefix": "domobject.get_value",
+        "description": "Gets one or more entries from the data manager.  When provided multiple keys, returns multiple values.\n@usage local value = object:get_value(\"key1\", \"key2\", ...)\n@param #domobject self\n@param #string key A relative variable name (not fully qualified)\n@return the value or values returned from the data manager.",
+        "body": "domobject.get_value(${1:self}, ${2:key})"
+    },
+    "domobject.set_value": {
+        "prefix": "domobject.set_value",
+        "description": "Set the value(s).  When provided multiple key-value pairs, sets multiple values.\ne.g. object:set_value(\"key1\", value1, \"key2\", value2, ...)\n@param #domobject self\n@param #string key, A relative variable name (not fully qualified)\n@param value the value to be assigned",
+        "body": "domobject.set_value(${1:self}, ${2:key,}, ${3:value})"
+    },
+    "domobject.get_data": {
+        "prefix": "domobject.get_data",
+        "description": "Gets one or more entries from the data manager. Each value passed in as\na parameter is first fully qualified, then is used as the key to lookup in the data manager.\nThis function returns a table using all the values as indexes and the\ncorresponding value is the data returned from the data manager. A nil is\nreturned for any values that do not match a key in the data manager.\ne.g. local data = object:get_data(\"key1\", \"key2\", ...)\n@param #domobject self\n@param #string key A relative variable name (not fully qualified)\n@return a table with key-value pairs where the provided keys are the table indices.",
+        "body": "domobject.get_data(${1:self}, ${2:key})"
+    },
+    "domobject.set_data": {
+        "prefix": "domobject.set_data",
+        "description": "Sets one or more items in the Storyboard application's data manager. Each\nkey should be relative to the object.  The key-value pairs will be set in the data manager.\ne.g. object:set_data({grd_x=100, grd_y=0, image=\"images/down.png\"})\n@param #domobject self\n@param #table data A table with multiple key-value pairs where the key's are relative to the object.",
+        "body": "domobject.set_data(${1:self}, ${2:data})"
+    },
+    "domobject.key": {
+        "prefix": "domobject.key",
+        "description": "Gets the fully qualified key for the provided relative key.  This function does not ensure that the key is valid.\n@param #domobject self\n@param #string key A key relative to the object\n@return #string A fully qualified key",
+        "body": "domobject.key(${1:self}, ${2:key})"
+    },
+    "control.get_hidden": {
+        "prefix": "control.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#control}\n@param #control self\n@return #boolean hidden",
+        "body": "control.get_hidden(${1:self})"
+    },
+    "control.get_x": {
+        "prefix": "control.get_x",
+        "description": "Get the value of grd_x for this @{#control}\n@param #control self\n@return #number x",
+        "body": "control.get_x(${1:self})"
+    },
+    "control.get_y": {
+        "prefix": "control.get_y",
+        "description": "Get the value of grd_y for this @{#control}\n@param #control self\n@return #number y",
+        "body": "control.get_y(${1:self})"
+    },
+    "control.get_width": {
+        "prefix": "control.get_width",
+        "description": "Get the value of grd_width for this @{#control}\n@param #control self\n@return #number width",
+        "body": "control.get_width(${1:self})"
+    },
+    "control.get_height": {
+        "prefix": "control.get_height",
+        "description": "Get the value of grd_height for this @{#control}\n@param #control self\n@return #number height",
+        "body": "control.get_height(${1:self})"
+    },
+    "control.get_position": {
+        "prefix": "control.get_position",
+        "description": "Get the value of grd_x and grd_y for this @{#control}\n@param #control self\n@return #number x\n@return #number y",
+        "body": "control.get_position(${1:self})"
+    },
+    "control.get_size": {
+        "prefix": "control.get_size",
+        "description": "Get the value of grd_width and grd_height for this @{#control}\n@param #control self\n@return #number width\n@return #number height",
+        "body": "control.get_size(${1:self})"
+    },
+    "control.get_bounds": {
+        "prefix": "control.get_bounds",
+        "description": "Get the value of grd_x, grd_y, grd_height and grd_width for this @{#control}\n@param #control self\n@return #number x\n@return #number y\n@return #number width\n@return #number height",
+        "body": "control.get_bounds(${1:self})"
+    },
+    "control.set_hidden": {
+        "prefix": "control.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#control}\n@param #control self\n@param #boolean hidden",
+        "body": "control.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "control.set_x": {
+        "prefix": "control.set_x",
+        "description": "Set the value of grd_x for this @{#control}\n\nAn optional anchor allows for automatic adjustment of x values:\n* grd.LEFT anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the x input by half the control width.\n* grd.RIGHT anchor will adjust the x input by the full control width.\n\n@param #control self\n@param #number x\n@param #number anchor Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)",
+        "body": "control.set_x(${1:self}, ${2:x}, ${3:anchor})"
+    },
+    "control.set_y": {
+        "prefix": "control.set_y",
+        "description": "Set the value of grd_y for this @{#control}\n\nAn optional anchor allows for automatic adjustment of y values:\n* grd.TOP anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the y input by half the control height.\n* grd.BOTTOM anchor will adjust the y input by the full control height.\n\n@param #control self\n@param #number y\n@param #number anchor Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_y(${1:self}, ${2:y}, ${3:anchor})"
+    },
+    "control.set_width": {
+        "prefix": "control.set_width",
+        "description": "Set the value of grd_width for this @{#control}\n\nAn optional anchor can allow for automatic adjustment of the control's x to keep the\ncontrol anchored in the desired position as the control's width changes:\n* grd.LEFT anchor will not adjust the control's x position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's x position by half the difference in control width.\n* grd.RIGHT anchor will adjust the control's x position by the difference in control width.\n\n@param #control self\n@param #number width\n@param #number anchor Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)",
+        "body": "control.set_width(${1:self}, ${2:width}, ${3:anchor})"
+    },
+    "control.set_height": {
+        "prefix": "control.set_height",
+        "description": "Set the value of grd_height for this @{#control}\n\nAn optional anchor can allow for automatic adjustment of the control's y to keep the\ncontrol anchored in the desired position as the control's height changes:\n* grd.TOP anchor will not adjust the control's y position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's y position by half the difference in control height.\n* grd.BOTTOM anchor will adjust the control's y position the difference in control height.\n\n@param #control self\n@param #number height\n@param #number anchor Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_height(${1:self}, ${2:height}, ${3:anchor})"
+    },
+    "control.set_position": {
+        "prefix": "control.set_position",
+        "description": "Set the position of this @{#control} by setting the value of grd_x and grd_y\n\nOptional anchors allow for automatic adjustment of x and y values:\n* grd.LEFT anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the x input by half the control width.\n* grd.RIGHT anchor will adjust the x input by the full control width.\n\n* grd.TOP anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the y input by half the control height.\n* grd.BOTTOM anchor will adjust the y input by the full control height.\n\n@param #control self\n@param #number x\n@param #number y\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_position(${1:self}, ${2:x}, ${3:y}, ${4:anchorH}, ${5:anchorV})"
+    },
+    "control.set_size": {
+        "prefix": "control.set_size",
+        "description": "Set the size of this @{#control} by setting the value of grd_width and grd_height\n\nOptional anchors can allow for automatic adjustment of the control's x and y to keep the\ncontrol anchored in the desired position as the control's size change:\n* grd.LEFT anchor will not adjust the control's x position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's x position by half the difference in control width.\n* grd.RIGHT anchor will adjust the control's x position by the difference in control width.\n\n* grd.TOP anchor will not adjust the control's y position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's y position by half the difference in control height.\n* grd.BOTTOM anchor will adjust the control's y position the difference in control height.\n\n@param #control self\n@param #number width\n@param #number height\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_size(${1:self}, ${2:width}, ${3:height}, ${4:anchorH}, ${5:anchorV})"
+    },
+    "control.set_bounds": {
+        "prefix": "control.set_bounds",
+        "description": "Set the bounds of this @{#control} by setting the value of grd_x, grd_y, grd_width and grd_height\n@param #control self\n@param #number x\n@param #number y\n@param #number width\n@param #number height",
+        "body": "control.set_bounds(${1:self}, ${2:x}, ${3:y}, ${4:width}, ${5:height})"
+    },
+    "control.hide": {
+        "prefix": "control.hide",
+        "description": "Hide this @{#control} by setting grd_hidden to true.\n@param #control self",
+        "body": "control.hide(${1:self})"
+    },
+    "control.show": {
+        "prefix": "control.show",
+        "description": "Show this @{#control} by setting grd_hidden to false.\n@param #control self",
+        "body": "control.show(${1:self})"
+    },
+    "control.clone": {
+        "prefix": "control.clone",
+        "description": "Clone the Storyboard Control represented by this @{#control}.\n@param #control self\n@param #string new_name the name of the new control (not fully qualified)\n@param #string parent_name the name of the group or layer to contain the new control\n@param #table data A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag\n@return #control the newly created control",
+        "body": "control.clone(${1:self}, ${2:new_name}, ${3:parent_name}, ${4:data})"
+    },
+    "control.delete": {
+        "prefix": "control.delete",
+        "description": "Delete the Storyboard Control represented by this @{#control}.  Must be a clone.\n@param #control self",
+        "body": "control.delete(${1:self})"
+    },
+    "tablecontrol.get_rows": {
+        "prefix": "tablecontrol.get_rows",
+        "description": "Get the value of grd_rows for this @{#tablecontrol}\n@param #tablecontrol self\n@return #number rows",
+        "body": "tablecontrol.get_rows(${1:self})"
+    },
+    "tablecontrol.get_cols": {
+        "prefix": "tablecontrol.get_cols",
+        "description": "Get the value of grd_cols for this @{#tablecontrol}\n@param #tablecontrol self\n@return #number cols",
+        "body": "tablecontrol.get_cols(${1:self})"
+    },
+    "tablecontrol.cell_key": {
+        "prefix": "tablecontrol.cell_key",
+        "description": "Gets the fully qualified key for the provided key at the specified row and col.  This function does not ensure that the key is valid.\n@param #tablecontrol self\n@param #number row\n@param #number cell\n@param #string key relative to the current\n@return #string Fully qualified cell key",
+        "body": "tablecontrol.cell_key(${1:self}, ${2:row}, ${3:cell}, ${4:key})"
+    },
+    "group.get_hidden": {
+        "prefix": "group.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#group}\n@param #group self\n@return #boolean hidden",
+        "body": "group.get_hidden(${1:self})"
+    },
+    "group.get_x": {
+        "prefix": "group.get_x",
+        "description": "Get the value of grd_x for this @{#group}\n@param #group self\n@return #number x",
+        "body": "group.get_x(${1:self})"
+    },
+    "group.get_y": {
+        "prefix": "group.get_y",
+        "description": "Get the value of grd_y for this @{#group}\n@param #group self\n@return #number y",
+        "body": "group.get_y(${1:self})"
+    },
+    "group.get_abs_x": {
+        "prefix": "group.get_abs_x",
+        "description": "Get the value of grd_abs_x for this @{#group}\n@param #group self\n@return #number abs_x",
+        "body": "group.get_abs_x(${1:self})"
+    },
+    "group.get_abs_y": {
+        "prefix": "group.get_abs_y",
+        "description": "Get the value of grd_abs_y for this @{#group}\n@param #group self\n@return #number abs_y",
+        "body": "group.get_abs_y(${1:self})"
+    },
+    "group.get_width": {
+        "prefix": "group.get_width",
+        "description": "Get the value of grd_width for this @{#group}\n@param #group self\n@return #number width",
+        "body": "group.get_width(${1:self})"
+    },
+    "group.get_height": {
+        "prefix": "group.get_height",
+        "description": "Get the value of grd_height for this @{#group}\n@param #group self\n@return #number height",
+        "body": "group.get_height(${1:self})"
+    },
+    "group.get_abs_width": {
+        "prefix": "group.get_abs_width",
+        "description": "Get the value of grd_abs_width for this @{#group}\n@param #group self\n@return #number abs_width",
+        "body": "group.get_abs_width(${1:self})"
+    },
+    "group.get_abs_height": {
+        "prefix": "group.get_abs_height",
+        "description": "Get the value of grd_abs_height for this @{#group}\n@param #group self\n@return #number abs_height",
+        "body": "group.get_abs_height(${1:self})"
+    },
+    "group.set_hidden": {
+        "prefix": "group.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#group}\n@param #group self\n@param #boolean hidden\n@return",
+        "body": "group.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "group.set_x": {
+        "prefix": "group.set_x",
+        "description": "Set the value of grd_x for this @{#group}\n@param #group self\n@param #number x",
+        "body": "group.set_x(${1:self}, ${2:x})"
+    },
+    "group.set_y": {
+        "prefix": "group.set_y",
+        "description": "Set the value of grd_y for this @{#group}\n@param #group self\n@param #number y",
+        "body": "group.set_y(${1:self}, ${2:y})"
+    },
+    "group.hide": {
+        "prefix": "group.hide",
+        "description": "Hide this @{#group} by setting grd_hidden to true.\n@param #group self",
+        "body": "group.hide(${1:self})"
+    },
+    "group.show": {
+        "prefix": "group.show",
+        "description": "Show this @{#group} by setting grd_hidden to false.\n@param #group self",
+        "body": "group.show(${1:self})"
+    },
+    "group.clone": {
+        "prefix": "group.clone",
+        "description": "Clone the Storyboard Group represented by this @{#group}.\n@param #group self\n@param #string new_name the name of the new group (not fully qualified)\n@param #string parent_name the name of the layer to contain the new group\n@param #table data A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag\n@return #group the newly created group",
+        "body": "group.clone(${1:self}, ${2:new_name}, ${3:parent_name}, ${4:data})"
+    },
+    "group.delete": {
+        "prefix": "group.delete",
+        "description": "Delete the Storyboard Group represented by this @{#group}.  Must be a clone.\n@param #group self",
+        "body": "group.delete(${1:self})"
+    },
+    "layerinstance.get_layer": {
+        "prefix": "layerinstance.get_layer",
+        "description": "Get the @{#layer} for this @{#layerinstance}\n@param #layerinstance self\n@return #layer",
+        "body": "layerinstance.get_layer(${1:self})"
+    },
+    "layerinstance.get_hidden": {
+        "prefix": "layerinstance.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#layerinstance}\n@param #layerinstance self\n@return #boolean hidden",
+        "body": "layerinstance.get_hidden(${1:self})"
+    },
+    "layerinstance.get_x": {
+        "prefix": "layerinstance.get_x",
+        "description": "Get the value of grd_x for this @{#layerinstance}\n@param #layerinstance self\n@return #number x",
+        "body": "layerinstance.get_x(${1:self})"
+    },
+    "layerinstance.get_y": {
+        "prefix": "layerinstance.get_y",
+        "description": "Get the value of grd_y for this @{#layerinstance}\n@param #layerinstance self\n@return #number y",
+        "body": "layerinstance.get_y(${1:self})"
+    },
+    "layerinstance.get_width": {
+        "prefix": "layerinstance.get_width",
+        "description": "Get the value of grd_width for this @{#layerinstance}\n@param #layerinstance self\n@return #number width",
+        "body": "layerinstance.get_width(${1:self})"
+    },
+    "layerinstance.get_height": {
+        "prefix": "layerinstance.get_height",
+        "description": "Get the value of grd_height for this @{#layerinstance}\n@param #layerinstance self\n@return #number height",
+        "body": "layerinstance.get_height(${1:self})"
+    },
+    "layerinstance.get_position": {
+        "prefix": "layerinstance.get_position",
+        "description": "Get the value of grd_x and grd_y for this @{#layerinstance}\n@param #layerinstance self\n@return #number x\n@return #number y",
+        "body": "layerinstance.get_position(${1:self})"
+    },
+    "layerinstance.get_size": {
+        "prefix": "layerinstance.get_size",
+        "description": "Get the value of grd_width and grd_height for this @{#layerinstance}\n@param #layerinstance self\n@return #number width\n@return #number height",
+        "body": "layerinstance.get_size(${1:self})"
+    },
+    "layerinstance.get_bounds": {
+        "prefix": "layerinstance.get_bounds",
+        "description": "Get the value of grd_x, grd_y, grd_height and grd_width for this @{#layerinstance}\n@param #layerinstance self\n@return #number x\n@return #number y\n@return #number width\n@return #number height",
+        "body": "layerinstance.get_bounds(${1:self})"
+    },
+    "layerinstance.get_alpha": {
+        "prefix": "layerinstance.get_alpha",
+        "description": "Get the value of grd_alpha for this @{#layerinstance}\n@param #layerinstance self\n@return #number alpha [0-255]",
+        "body": "layerinstance.get_alpha(${1:self})"
+    },
+    "layerinstance.set_hidden": {
+        "prefix": "layerinstance.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#layerinstance}\n@param #layerinstance self\n@param #boolean hidden",
+        "body": "layerinstance.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "layerinstance.set_x": {
+        "prefix": "layerinstance.set_x",
+        "description": "Set the value of grd_x for this @{#layerinstance}\n@param #layerinstance self\n@param #number x",
+        "body": "layerinstance.set_x(${1:self}, ${2:x})"
+    },
+    "layerinstance.set_y": {
+        "prefix": "layerinstance.set_y",
+        "description": "Set the value of grd_y for this @{#layerinstance}\n@param #layerinstance self\n@param #number y",
+        "body": "layerinstance.set_y(${1:self}, ${2:y})"
+    },
+    "layerinstance.set_width": {
+        "prefix": "layerinstance.set_width",
+        "description": "Set the value of grd_width for this @{#layerinstance}\n@param #layerinstance self\n@param #number width",
+        "body": "layerinstance.set_width(${1:self}, ${2:width})"
+    },
+    "layerinstance.set_height": {
+        "prefix": "layerinstance.set_height",
+        "description": "Set the value of grd_height for this @{#layerinstance}\n@param #layerinstance self\n@param #number height",
+        "body": "layerinstance.set_height(${1:self}, ${2:height})"
+    },
+    "layerinstance.set_position": {
+        "prefix": "layerinstance.set_position",
+        "description": "Set the position of this @{#layerinstance} by setting the value of grd_x and grd_y\n@param #layerinstance self\n@param #number x\n@param #number y",
+        "body": "layerinstance.set_position(${1:self}, ${2:x}, ${3:y})"
+    },
+    "layerinstance.set_size": {
+        "prefix": "layerinstance.set_size",
+        "description": "Set the size of this @{#layerinstance} by setting the value of grd_width and grd_height\n@param #layerinstance self\n@param #number width\n@param #number height",
+        "body": "layerinstance.set_size(${1:self}, ${2:width}, ${3:height})"
+    },
+    "layerinstance.set_bounds": {
+        "prefix": "layerinstance.set_bounds",
+        "description": "Set the bounds of this @{#layerinstance} by setting the value of grd_x, grd_y, grd_width and grd_height\n@param #layerinstance self\n@param #number x\n@param #number y\n@param #number width\n@param #number height",
+        "body": "layerinstance.set_bounds(${1:self}, ${2:x}, ${3:y}, ${4:width}, ${5:height})"
+    },
+    "layerinstance.set_alpha": {
+        "prefix": "layerinstance.set_alpha",
+        "description": "Set the value of grd_alpha for this @{#layerinstance}\n@param #layerinstance self\n@param #number alpha [0-255]",
+        "body": "layerinstance.set_alpha(${1:self}, ${2:alpha})"
+    },
+    "layerinstance.hide": {
+        "prefix": "layerinstance.hide",
+        "description": "Hide this @{#layerinstance} by setting grd_hidden to true.\n@param #layerinstance self",
+        "body": "layerinstance.hide(${1:self})"
+    },
+    "layerinstance.show": {
+        "prefix": "layerinstance.show",
+        "description": "Show this @{#layerinstance} by setting grd_hidden to false.\n@param #layerinstance self",
+        "body": "layerinstance.show(${1:self})"
+    }
+}

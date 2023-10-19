@@ -17,6 +17,8 @@ def generate_body():
 	match active_type:
 		case 'type':
 			body = active_key
+		case 'field':
+			body = active_key
 		case 'function':
 			body = active_key + '('
 
@@ -55,8 +57,7 @@ def save_current_snippet(keep_data=False):
 	global active_prefix
 	global active_key
 	global active_desc
-
-	print('save', active_key)
+	global active_type
 
 	if(active_key == ''):
 		active_desc = ''
@@ -72,11 +73,11 @@ def save_current_snippet(keep_data=False):
 
 	# clear globals
 	active_desc = ''
+	active_key = ''
 	active_data.clear()
 
 	if(not keep_data):
 		active_prefix = ''
-		active_key = ''
 		active_type = ''
 
 def new_prefix(doc, typ):
@@ -87,6 +88,10 @@ def new_prefix(doc, typ):
 		case 'type':
 			active_prefix = prefix
 		case 'function':
+			split = prefix.split("parent=#") # canvas]
+			prefix = split[1][:-1] # canvas
+			active_prefix = prefix
+		case 'field':
 			split = prefix.split("parent=#") # canvas]
 			prefix = split[1][:-1] # canvas
 			active_prefix = prefix
@@ -102,37 +107,41 @@ def process_descriptor(line):
 
 	# get data from doc line
 	doc_base = doc[0].strip()
-	doc_type = doc[1].strip()
 
 	# Match doc base (func, type, param, etc.)
 	match doc_base:
 		case 'function':
-			save_current_snippet()
 			new_prefix(doc, 'function')
 			func_name = doc[2].strip()
 			new_key(func_name)
-		case 'type':
-			save_current_snippet()
-			new_prefix(doc, 'type')
-		case 'field':
-			if (active_prefix == ''): # new block - global vars we can't process
-				return 				  # e.g. @field [parent=#gre] #string APP_ROOT
-			
-			field_name = doc[2].strip()
-			new_key(field_name)
 
+		case 'type':
+			new_prefix(doc, 'type')
+
+		case 'field':
+			doc_type = doc[1].strip() 		# @field #boolean reverse
+			field_name = doc[2].strip()
 			field_desc = ''
 
-			if(len(doc) > 3):
-				i = 3
-				while i < len(doc):
-					field_desc = f"{field_desc} {doc[i].strip()}"
-					i = i + 1
+			if('parent' in doc_type):		# @field [parent=#gredom] #number SCREEN
+				new_prefix(doc, 'field')
+				field_name = doc[3].strip()
+			else:
+				if(len(doc) > 3):
+					i = 3
+					while i < len(doc):
+						field_desc = f"{field_desc} {doc[i].strip()}"
+						i = i + 1
+			
+			new_key(field_name)
 
 			add_to_desc(field_desc)
 			save_current_snippet(True)
+
 		case 'param':
 			param = ''
+			doc_type = doc[1].strip()
+
 			if('#' in doc_type):
 				param = doc[2].strip()
 			else:
@@ -143,21 +152,24 @@ def process_descriptor(line):
 			# add desc
 			text = "@" + split[1].strip()
 			add_to_desc(text)
+
 		case 'module':
 			pass
+
 		case _:
 			text = "@" + split[1].strip()
 			add_to_desc(text)
 
+
 def process_line(line):
 	# Check if line has descriptor
-	if ("@" in line):
+	if (len(line) > 4 and line[3] == '@'):
 		return process_descriptor(line)
 	
 	# Get first 3 lines of line
 	split = line[:3]
 	if (split == "-- "):
-		text = line[3:].strip() # remove first 3 letters
+		text = line[3:].strip() 	# remove first 3 letters
 		return add_to_desc(text)
 
 	# check if new 'block' is next
@@ -167,15 +179,23 @@ def process_line(line):
 def main(doclua):
 	docfile = open(doclua, 'r')
 	
+	# Loop each line in doclua file
 	for line in docfile:
 		process_line(line)
 
+	# save the final snippet
 	save_current_snippet()
 
+	# print logs
+	print("Generated snippets.json from doclua file")
+	print(f"Entries: {len(snippet_data)}")
+
+	# write to json file
 	json_data = json.dumps(snippet_data, indent=4)
 	json_file.write(json_data)
 
 	docfile.close()
+	json_file.close()
 
 if __name__ == "__main__":
 	doclua = sys.argv[1]
