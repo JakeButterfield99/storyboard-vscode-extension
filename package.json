@@ -2,9 +2,11 @@
   "name": "storyboard-vscode-extension",
   "displayName": "storyboard-vscode-extension",
   "description": "Crank Storyboard VSCode Snippets",
-  "version": "1.0.0",
+  "publisher": "jake-butterfield",
+  "icon": "images/logo.png",
+  "version": "1.0.1",
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^1.83.0"
   },
   "categories": [
     "Snippets",
@@ -13,12 +15,16 @@
   "activationEvents": [
     "onLanguage:lua"
   ],
-  "main": "./src/extension",
+  "main": "./out/extension",
   "contributes": {
     "snippets": [
       {
         "language": "lua",
         "path": "./src/snippets/gre.json"
+      },
+	  {
+        "language": "lua",
+        "path": "./src/snippets/gredom.json"
       }
     ]
   },
@@ -31,15 +37,16 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.83.0",
     "@types/mocha": "^10.0.2",
     "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
     "eslint": "^8.50.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
-    "@vscode/test-electron": "^2.3.4"
-  }
+    "typescript": "^5.2.2"
+  },
+  "repository": "https://github.com/JakeButterfield99/storyboard-vscode-extension/"
 }

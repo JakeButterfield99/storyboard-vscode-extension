@@ -10,3 +10,4 @@ tsconfig.lsif.json
 node_modules/
 .vscode/
 out/*
+*.vsix
