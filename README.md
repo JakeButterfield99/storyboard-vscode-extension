@@ -1,23 +1,14 @@
 # Crank Storyboard VS Code Extension
 
+This extension will auto-complete lua snippets for Crank Storyboard. This includes any gre. or gredom. types & functions. Currently supporting Storyboard 8.1.
+
 ### Usage
 
-Extension will automatically load in open Lua files.
+Extension will automatically load in open Lua files. Start typing a gre.something function to see the auto-complete.
 
-### Update Lua Doc references
+![usage](/images/usage.png)
 
-**requires Python 3.10+*
 
-Find the path to your `.doclua` files.
+### Documentation/Snippets
 
-MacOS:
-```
-/Applications/Crank_Software/Storyboard_Designer/Storyboard.app/Contents/Eclipse/plugins/com.crank.gdt.lua_7.2.0.202207270823/resources/lua/api/gre.doclua
-```
-
-Run the `src/tool/doclua.py` script with the path to the .doclua file you want to generate snippets from. E.g:
-```
-python3 doclua.py /Applications/Crank_Software/Storyboard_Designer/Storyboard.app/Contents/Eclipse/plugins/com.crank.gdt.lua_7.2.0.202207270823/resources/lua/api/gre.doclua
-```
-
-Copy the generated `snippets.json` file to `src/snippets/` and rename (currently accepted names are `gre.json` and `gredom.json`, can be adjusted in `package.json`)
+You can view the luadoc converted snippets here: [gre](/src/snippets/gre.json) and [gredom](/src/snippets/gredom.json).

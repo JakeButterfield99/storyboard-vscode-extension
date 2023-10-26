@@ -4,7 +4,17 @@
         "description": "The application context of the current action",
         "body": "context.context_app"
     },
+    "mapargs.context_app": {
+        "prefix": "context.context_app",
+        "description": "The application context of the current action",
+        "body": "context.context_app"
+    },
     "context.context_screen": {
+        "prefix": "context.context_screen",
+        "description": "The screen context of the current action (the current screen)",
+        "body": "context.context_screen"
+    },
+    "mapargs.context_screen": {
         "prefix": "context.context_screen",
         "description": "The screen context of the current action (the current screen)",
         "body": "context.context_screen"
@@ -14,7 +24,17 @@
         "description": "The layer context of the current action (the current layer)",
         "body": "context.context_layer"
     },
+    "mapargs.context_layer": {
+        "prefix": "context.context_layer",
+        "description": "The layer context of the current action (the current layer)",
+        "body": "context.context_layer"
+    },
     "context.context_control": {
+        "prefix": "context.context_control",
+        "description": "The control context of the current action (the current control)",
+        "body": "context.context_control"
+    },
+    "mapargs.context_control": {
         "prefix": "context.context_control",
         "description": "The control context of the current action (the current control)",
         "body": "context.context_control"
@@ -24,7 +44,17 @@
         "description": "The group context of the current action (the current group)",
         "body": "context.context_group"
     },
+    "mapargs.context_group": {
+        "prefix": "context.context_group",
+        "description": "The group context of the current action (the current group)",
+        "body": "context.context_group"
+    },
     "context.context_row": {
+        "prefix": "context.context_row",
+        "description": "If the context_control is a Table then this is the row index of the current cell",
+        "body": "context.context_row"
+    },
+    "mapargs.context_row": {
         "prefix": "context.context_row",
         "description": "If the context_control is a Table then this is the row index of the current cell",
         "body": "context.context_row"
@@ -34,7 +64,17 @@
         "description": "If the context_control is a Table then this is the column index of the current cell",
         "body": "context.context_col"
     },
+    "mapargs.context_col": {
+        "prefix": "context.context_col",
+        "description": "If the context_control is a Table then this is the column index of the current cell",
+        "body": "context.context_col"
+    },
     "context.active_context": {
+        "prefix": "context.active_context",
+        "description": "The fully qualified name of the model object that invoked the action. If that object is the application, this will be the empty string.",
+        "body": "context.active_context"
+    },
+    "mapargs.active_context": {
         "prefix": "context.active_context",
         "description": "The fully qualified name of the model object that invoked the action. If that object is the application, this will be the empty string.",
         "body": "context.active_context"
@@ -44,7 +84,17 @@
         "description": "The name of the event that triggered the action",
         "body": "context.context_event"
     },
+    "mapargs.context_event": {
+        "prefix": "context.context_event",
+        "description": "The name of the event that triggered the action",
+        "body": "context.context_event"
+    },
     "context.context_event_data": {
+        "prefix": "context.context_event_data",
+        "description": "A pointer to a Lua table containing any event data. The event data is different for each event and is defined in the event definition",
+        "body": "context.context_event_data"
+    },
+    "mapargs.context_event_data": {
         "prefix": "context.context_event_data",
         "description": "A pointer to a Lua table containing any event data. The event data is different for each event and is defined in the event definition",
         "body": "context.context_event_data"

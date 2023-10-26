@@ -4,7 +4,7 @@
   "description": "Crank Storyboard VSCode Snippets",
   "publisher": "jake-butterfield",
   "icon": "images/logo.png",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.83.0"
   },
