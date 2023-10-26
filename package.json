@@ -1,10 +1,10 @@
 {
   "name": "storyboard-vscode-extension",
-  "displayName": "storyboard-vscode-extension",
+  "displayName": "Crank Storyboard",
   "description": "Crank Storyboard VSCode Snippets",
   "publisher": "jake-butterfield",
   "icon": "images/logo.png",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.83.0"
   },

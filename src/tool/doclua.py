@@ -4,12 +4,31 @@ import sys
 
 json_file = io.open('snippets.json', 'w')
 
+# Aliases
+aliases = {
+	"context": ["mapargs"],
+}
+
 snippet_data = {}
 active_type = ''
 active_data = []
 active_prefix = ''
 active_key = ''
 active_desc = ''
+
+def generate_alias():
+	# Get key before the '.' e.g. context.context_screen = context
+	key_split = active_key.split('.')
+	key = key_split[0]
+	cmd = key_split[1]
+
+	if(not key in aliases):
+		return
+	
+	# loop aliases and copy data over
+	for alias in aliases[key]:
+		new_key = f"{alias}.{cmd}"
+		snippet_data[new_key] = snippet_data[active_key]
 
 def generate_body():
 	body = ''
@@ -70,6 +89,9 @@ def save_current_snippet(keep_data=False):
 
 	# generate body
 	snippet_data[active_key]['body'] = generate_body()
+
+	# generate aliases
+	generate_alias()
 
 	# clear globals
 	active_desc = ''
