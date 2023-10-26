@@ -1,927 +1,442 @@
 {
-    "context.context_app": {
-        "prefix": "context.context_app",
-        "description": "The application context of the current action",
-        "body": "context.context_app"
+    "gredom.CONTROL": {
+        "prefix": "gredom.CONTROL",
+        "description": "Model object enumeration for Control (0)",
+        "body": "gredom.CONTROL"
     },
-    "mapargs.context_app": {
-        "prefix": "context.context_app",
-        "description": "The application context of the current action",
-        "body": "context.context_app"
+    "gredom.TABLE": {
+        "prefix": "gredom.TABLE",
+        "description": "Model object enumeration for Table(1)",
+        "body": "gredom.TABLE"
     },
-    "context.context_screen": {
-        "prefix": "context.context_screen",
-        "description": "The screen context of the current action (the current screen)",
-        "body": "context.context_screen"
+    "gredom.TEMPLATE": {
+        "prefix": "gredom.TEMPLATE",
+        "description": "Model object enumeration for Table Template (2)",
+        "body": "gredom.TEMPLATE"
     },
-    "mapargs.context_screen": {
-        "prefix": "context.context_screen",
-        "description": "The screen context of the current action (the current screen)",
-        "body": "context.context_screen"
+    "gredom.GROUP": {
+        "prefix": "gredom.GROUP",
+        "description": "Model object enumeration for Group (3)",
+        "body": "gredom.GROUP"
     },
-    "context.context_layer": {
-        "prefix": "context.context_layer",
-        "description": "The layer context of the current action (the current layer)",
-        "body": "context.context_layer"
+    "gredom.LAYER": {
+        "prefix": "gredom.LAYER",
+        "description": "Model object enumeration for Layer(4)",
+        "body": "gredom.LAYER"
     },
-    "mapargs.context_layer": {
-        "prefix": "context.context_layer",
-        "description": "The layer context of the current action (the current layer)",
-        "body": "context.context_layer"
+    "gredom.LAYER_INSTANCE": {
+        "prefix": "gredom.LAYER_INSTANCE",
+        "description": "Model object enumeration for Layer Instance (5)",
+        "body": "gredom.LAYER_INSTANCE"
     },
-    "context.context_control": {
-        "prefix": "context.context_control",
-        "description": "The control context of the current action (the current control)",
-        "body": "context.context_control"
-    },
-    "mapargs.context_control": {
-        "prefix": "context.context_control",
-        "description": "The control context of the current action (the current control)",
-        "body": "context.context_control"
-    },
-    "context.context_group": {
-        "prefix": "context.context_group",
-        "description": "The group context of the current action (the current group)",
-        "body": "context.context_group"
-    },
-    "mapargs.context_group": {
-        "prefix": "context.context_group",
-        "description": "The group context of the current action (the current group)",
-        "body": "context.context_group"
-    },
-    "context.context_row": {
-        "prefix": "context.context_row",
-        "description": "If the context_control is a Table then this is the row index of the current cell",
-        "body": "context.context_row"
-    },
-    "mapargs.context_row": {
-        "prefix": "context.context_row",
-        "description": "If the context_control is a Table then this is the row index of the current cell",
-        "body": "context.context_row"
-    },
-    "context.context_col": {
-        "prefix": "context.context_col",
-        "description": "If the context_control is a Table then this is the column index of the current cell",
-        "body": "context.context_col"
-    },
-    "mapargs.context_col": {
-        "prefix": "context.context_col",
-        "description": "If the context_control is a Table then this is the column index of the current cell",
-        "body": "context.context_col"
-    },
-    "context.active_context": {
-        "prefix": "context.active_context",
-        "description": "The fully qualified name of the model object that invoked the action. If that object is the application, this will be the empty string.",
-        "body": "context.active_context"
-    },
-    "mapargs.active_context": {
-        "prefix": "context.active_context",
-        "description": "The fully qualified name of the model object that invoked the action. If that object is the application, this will be the empty string.",
-        "body": "context.active_context"
-    },
-    "context.context_event": {
-        "prefix": "context.context_event",
-        "description": "The name of the event that triggered the action",
-        "body": "context.context_event"
-    },
-    "mapargs.context_event": {
-        "prefix": "context.context_event",
-        "description": "The name of the event that triggered the action",
-        "body": "context.context_event"
-    },
-    "context.context_event_data": {
-        "prefix": "context.context_event_data",
-        "description": "A pointer to a Lua table containing any event data. The event data is different for each event and is defined in the event definition",
-        "body": "context.context_event_data"
-    },
-    "mapargs.context_event_data": {
-        "prefix": "context.context_event_data",
-        "description": "A pointer to a Lua table containing any event data. The event data is different for each event and is defined in the event definition",
-        "body": "context.context_event_data"
-    },
-    "animationstate.state": {
-        "prefix": "animationstate.state",
-        "description": "This type is used to describe the return type of gre.animation_get_state\n either gre.ANIMATION_NOT_FOUND, gre.ANIMATION_NOT_RUNNING, gre.ANIMATION_PAUSED, gre.ANIMATION_RUNNING, gre.ANIMATION_COMPLETE",
-        "body": "animationstate.state"
-    },
-    "animationstate.progress": {
-        "prefix": "animationstate.progress",
-        "description": "a number between 0 and 1",
-        "body": "animationstate.progress"
-    },
-    "animationstate.reverse": {
-        "prefix": "animationstate.reverse",
+    "gredom.SCREEN": {
+        "prefix": "gredom.SCREEN",
         "description": "",
-        "body": "animationstate.reverse"
-    },
-    "animationstate.duration": {
-        "prefix": "animationstate.duration",
-        "description": "",
-        "body": "animationstate.duration"
-    },
-    "animationdata.id": {
-        "prefix": "animationdata.id",
-        "description": "an override id used to identify the running animation which by default is the original animation name or id returned from gre.animation_create. (default nil)",
-        "body": "animationdata.id"
-    },
-    "animationdata.context": {
-        "prefix": "animationdata.context",
-        "description": "the context that will be used by the animation to resolve it's varables. (default nil)",
-        "body": "animationdata.context"
-    },
-    "animationdata.progress": {
-        "prefix": "animationdata.progress",
-        "description": "a number from 0-1 which corresponds to the animation's progress (default 0)",
-        "body": "animationdata.progress"
-    },
-    "animationdata.pause": {
-        "prefix": "animationdata.pause",
-        "description": "when true, the animation will begin in a paused state.  Can be used in combination with the progress option to provide a seeking functionality. (default false)",
-        "body": "animationdata.pause"
-    },
-    "animationdata.reverse": {
-        "prefix": "animationdata.reverse",
-        "description": "a boolean to indicate if the animation should run in reverse (default false)",
-        "body": "animationdata.reverse"
-    },
-    "animationdata.cleanup": {
-        "prefix": "animationdata.cleanup",
-        "description": "a boolean to indicate if an animation should cleanup after completion.  (default true)",
-        "body": "animationdata.cleanup"
-    },
-    "controlattrs.x": {
-        "prefix": "controlattrs.x",
-        "description": "",
-        "body": "controlattrs.x"
-    },
-    "controlattrs.y": {
-        "prefix": "controlattrs.y",
-        "description": "",
-        "body": "controlattrs.y"
-    },
-    "controlattrs.width": {
-        "prefix": "controlattrs.width",
-        "description": "",
-        "body": "controlattrs.width"
-    },
-    "controlattrs.height": {
-        "prefix": "controlattrs.height",
-        "description": "",
-        "body": "controlattrs.height"
-    },
-    "controlattrs.hidden": {
-        "prefix": "controlattrs.hidden",
-        "description": "",
-        "body": "controlattrs.hidden"
-    },
-    "controlattrs.active": {
-        "prefix": "controlattrs.active",
-        "description": "",
-        "body": "controlattrs.active"
-    },
-    "controlattrs.findex": {
-        "prefix": "controlattrs.findex",
-        "description": "",
-        "body": "controlattrs.findex"
-    },
-    "controlattrs.mask_enabled": {
-        "prefix": "controlattrs.mask_enabled",
-        "description": "",
-        "body": "controlattrs.mask_enabled"
-    },
-    "tableattrs.rows": {
-        "prefix": "tableattrs.rows",
-        "description": "@extends #controlattrs",
-        "body": "tableattrs.rows"
-    },
-    "tableattrs.cols": {
-        "prefix": "tableattrs.cols",
-        "description": "",
-        "body": "tableattrs.cols"
-    },
-    "tableattrs.visible_rows": {
-        "prefix": "tableattrs.visible_rows",
-        "description": "",
-        "body": "tableattrs.visible_rows"
-    },
-    "tableattrs.visible_cols": {
-        "prefix": "tableattrs.visible_cols",
-        "description": "",
-        "body": "tableattrs.visible_cols"
-    },
-    "tableattrs.active_row": {
-        "prefix": "tableattrs.active_row",
-        "description": "",
-        "body": "tableattrs.active_row"
-    },
-    "tableattrs.active_col": {
-        "prefix": "tableattrs.active_col",
-        "description": "",
-        "body": "tableattrs.active_col"
-    },
-    "tableattrs.row": {
-        "prefix": "tableattrs.row",
-        "description": "",
-        "body": "tableattrs.row"
-    },
-    "tableattrs.col": {
-        "prefix": "tableattrs.col",
-        "description": "",
-        "body": "tableattrs.col"
-    },
-    "tablecellattrs.x": {
-        "prefix": "tablecellattrs.x",
-        "description": "",
-        "body": "tablecellattrs.x"
-    },
-    "tablecellattrs.y": {
-        "prefix": "tablecellattrs.y",
-        "description": "",
-        "body": "tablecellattrs.y"
-    },
-    "tablecellattrs.width": {
-        "prefix": "tablecellattrs.width",
-        "description": "",
-        "body": "tablecellattrs.width"
-    },
-    "tablecellattrs.height": {
-        "prefix": "tablecellattrs.height",
-        "description": "",
-        "body": "tablecellattrs.height"
-    },
-    "tablecellattrs.hidden": {
-        "prefix": "tablecellattrs.hidden",
-        "description": "",
-        "body": "tablecellattrs.hidden"
-    },
-    "groupattrs.x": {
-        "prefix": "groupattrs.x",
-        "description": "",
-        "body": "groupattrs.x"
-    },
-    "groupattrs.y": {
-        "prefix": "groupattrs.y",
-        "description": "",
-        "body": "groupattrs.y"
-    },
-    "groupattrs.width": {
-        "prefix": "groupattrs.width",
-        "description": "",
-        "body": "groupattrs.width"
-    },
-    "groupattrs.height": {
-        "prefix": "groupattrs.height",
-        "description": "",
-        "body": "groupattrs.height"
-    },
-    "groupattrs.abs_x": {
-        "prefix": "groupattrs.abs_x",
-        "description": "",
-        "body": "groupattrs.abs_x"
-    },
-    "groupattrs.abs_y": {
-        "prefix": "groupattrs.abs_y",
-        "description": "",
-        "body": "groupattrs.abs_y"
-    },
-    "groupattrs.abs_width": {
-        "prefix": "groupattrs.abs_width",
-        "description": "",
-        "body": "groupattrs.abs_width"
-    },
-    "groupattrs.abs_height": {
-        "prefix": "groupattrs.abs_height",
-        "description": "",
-        "body": "groupattrs.abs_height"
-    },
-    "groupattrs.hidden": {
-        "prefix": "groupattrs.hidden",
-        "description": "",
-        "body": "groupattrs.hidden"
-    },
-    "layerattrs.x": {
-        "prefix": "layerattrs.x",
-        "description": "",
-        "body": "layerattrs.x"
-    },
-    "layerattrs.y": {
-        "prefix": "layerattrs.y",
-        "description": "",
-        "body": "layerattrs.y"
-    },
-    "layerattrs.width": {
-        "prefix": "layerattrs.width",
-        "description": "",
-        "body": "layerattrs.width"
-    },
-    "layerattrs.height": {
-        "prefix": "layerattrs.height",
-        "description": "",
-        "body": "layerattrs.height"
-    },
-    "layerattrs.xoffset": {
-        "prefix": "layerattrs.xoffset",
-        "description": "",
-        "body": "layerattrs.xoffset"
-    },
-    "layerattrs.yoffset": {
-        "prefix": "layerattrs.yoffset",
-        "description": "",
-        "body": "layerattrs.yoffset"
-    },
-    "layerattrs.hidden": {
-        "prefix": "layerattrs.hidden",
-        "description": "",
-        "body": "layerattrs.hidden"
-    },
-    "layerattrs.geometry": {
-        "prefix": "layerattrs.geometry",
-        "description": "",
-        "body": "layerattrs.geometry"
-    },
-    "layerattrs.effect": {
-        "prefix": "layerattrs.effect",
-        "description": "",
-        "body": "layerattrs.effect"
-    },
-    "canvas.get_dimensions": {
-        "prefix": "canvas.get_dimensions",
-        "description": "Get a canvas object handle by name\n@param self\n@returns #table size A table containing width and height",
-        "body": "canvas.get_dimensions(${1:self})"
-    },
-    "canvas.fill": {
-        "prefix": "canvas.fill",
-        "description": "Flood fill the entire canvas with a specific color\n@param self\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill(${1:self}, ${2:color})"
-    },
-    "canvas.fill_rect": {
-        "prefix": "canvas.fill_rect",
-        "description": "Fill a rectangle defined by the bounding area of x1,y2 to x2,y2 with a specific color\n@param self\n@param #number x1 The x position of the first corner\n@param #number y1 The y position of the first corner\n@param #number x2 The x position of the second corner\n@param #number y2 The y position of the second corner\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill_rect(${1:self}, ${2:x1}, ${3:y1}, ${4:x2}, ${5:y2}, ${6:color})"
-    },
-    "canvas.fill_poly": {
-        "prefix": "canvas.fill_poly",
-        "description": "Fill the content of a polygon through the points defined in the xytable witha specific color. The polygon must be a closed simple polygon.\n@param self\n@param #table xytable A Lua table {{x=x1,y=y1},{x=x2,y=y2}...}.  Alternatively two tables of parameters containing an\narray of points may be provided as in {x1,x2,..}, {y1,y2,..} similar to using gre.poly_string\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill_poly(${1:self}, ${2:xytable}, ${3:color})"
-    },
-    "canvas.fill_circle": {
-        "prefix": "canvas.fill_circle",
-        "description": "Fill a circle.\n@param self\n@param #number x The x position of the center of the circle\n@param #number y The y position of the center of the circle\n@param #number radius The radius of the circle\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill_circle(${1:self}, ${2:x}, ${3:y}, ${4:radius}, ${5:color})"
-    },
-    "canvas.fill_ellipse": {
-        "prefix": "canvas.fill_ellipse",
-        "description": "Fill an ellipse.\n@param self\n@param #number x The x position of the center of the ellipse\n@param #number y The y position of the center of the ellipse\n@param #number radius_x The radius in the x direction of the ellipse\n@param #number radius_y The radius in the y direction of the ellipse\n@param #number rotation The rotation angle in degrees clockwise\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill_ellipse(${1:self}, ${2:x}, ${3:y}, ${4:radius_x}, ${5:radius_y}, ${6:rotation}, ${7:color})"
-    },
-    "canvas.fill_arc": {
-        "prefix": "canvas.fill_arc",
-        "description": "Fill an arc.\n@param self\n@param #number x The x position of the center of the arc\n@param #number y The y position of the center of the arc\n@param #number radius_x The radius in the x direction of the arc\n@param #number radius_y The radius in the y direction of the arc\n@param #number start The start angle of the arc in degrees clockwise from the positive x axis\n@param #number end The end angle of the arc in degrees clockwise from the positive x axis\n@param #number rotation The rotation angle in degrees clockwise\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.fill_arc(${1:self}, ${2:x}, ${3:y}, ${4:radius_x}, ${5:radius_y}, ${6:start}, ${7:end}, ${8:rotation}, ${9:color})"
-    },
-    "canvas.stroke_circle": {
-        "prefix": "canvas.stroke_circle",
-        "description": "Stroke a circle.\n@param self\n@param #number x The x position of the center of the circle\n@param #number y The y position of the center of the circle\n@param #number radius The radius of the circle\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_circle(${1:self}, ${2:x}, ${3:y}, ${4:radius}, ${5:color})"
-    },
-    "canvas.stroke_ellipse": {
-        "prefix": "canvas.stroke_ellipse",
-        "description": "Stroke an ellipse.\n@param self\n@param #number x The x position of the center of the ellipse\n@param #number y The y position of the center of the ellipse\n@param #number radius_x The radius in the x direction of the ellipse\n@param #number radius_y The radius in the y direction of the ellipse\n@param #number rotation The rotation angle in degrees clockwise\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_ellipse(${1:self}, ${2:x}, ${3:y}, ${4:radius_x}, ${5:radius_y}, ${6:rotation}, ${7:color})"
-    },
-    "canvas.stroke_arc": {
-        "prefix": "canvas.stroke_arc",
-        "description": "Stroke an arc.\n@param self\n@param #number x The x position of the center of the arc\n@param #number y The y position of the center of the arc\n@param #number radius_x The radius in the x direction of the arc\n@param #number radius_y The radius in the y direction of the arc\n@param #number start The start angle of the arc in degrees clockwise from the positive x axis\n@param #number end The end angle of the arc in degrees clockwise from the positive x axis\n@param #number rotation The rotation angle in degrees clockwise\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_arc(${1:self}, ${2:x}, ${3:y}, ${4:radius_x}, ${5:radius_y}, ${6:start}, ${7:end}, ${8:rotation}, ${9:color})"
-    },
-    "canvas.stroke_line": {
-        "prefix": "canvas.stroke_line",
-        "description": "Stroke a line between the points x1,y2 to x2,y2 with a specific color.The width of the line is the last value passed to\nCANVAS:set_line_width or 1 if no width has ever been specified.\n@param self\n@param #number x1 The x position of the first corner\n@param #number y1 The y position of the first corner\n@param #number x2 The x position of the second corner\n@param #number y2 The y position of the second corner\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_line(${1:self}, ${2:x1}, ${3:y1}, ${4:x2}, ${5:y2}, ${6:color})"
-    },
-    "canvas.stroke_rect": {
-        "prefix": "canvas.stroke_rect",
-        "description": "Stroke a rectangle outline defined by the bounding area of x1,y2 to x2,y2 with a specific color.\nThe width of the outline is the last value passed to CANVAS:set_line_width or 1 if no width has ever been specified.\n@param self\n@param #number x1 The x position of the first corner\n@param #number y1 The y position of the first corner\n@param #number x2 The x position of the second corner\n@param #number y2 The y position of the second corner\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_rect(${1:self}, ${2:x1}, ${3:y1}, ${4:x2}, ${5:y2}, ${6:color})"
-    },
-    "canvas.stroke_poly": {
-        "prefix": "canvas.stroke_poly",
-        "description": "Stroke a polygon through the points defined in the xytable with a specific color.The width of the line is the last value passed to CANVAS:set_line_width or1 if no width has ever been specified.\n@param self\n@param #table xytable A Lua table {{x=x1,y=y1},{x=x2,y=y2}...}.  Alternatively two tables of parameters containing an\narray of points may be provided as in {x1,x2,..}, {y1,y2,..} similar to using gre.poly_string\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.stroke_poly(${1:self}, ${2:xytable}, ${3:color})"
-    },
-    "canvas.clear_rect": {
-        "prefix": "canvas.clear_rect",
-        "description": "Make transparent a rectangle defined by the bounding area of x1,y2 to x2,y2.\n@param self\n@param #number x1 The x position of the first corner\n@param #number y1 The y position of the first corner\n@param #number x2 The x position of the second corner\n@param #number y2 The y position of the second corner",
-        "body": "canvas.clear_rect(${1:self}, ${2:x1}, ${3:y1}, ${4:x2}, ${5:y2})"
-    },
-    "canvas.set_pixel": {
-        "prefix": "canvas.set_pixel",
-        "description": "Set the pixel value at x, y to the specified color. This is equivalent to drawing a 1x1 filled rectangle.\n@param self\n@param #number x The x position of the pixel\n@param #number y The y position of the pixel\n@param #number color An RGB color value as an integer value",
-        "body": "canvas.set_pixel(${1:self}, ${2:x}, ${3:y}, ${4:color})"
-    },
-    "canvas.set_alpha": {
-        "prefix": "canvas.set_alpha",
-        "description": "Set the transparency level with which subsequent draw operations should be performed. The default value for alpha is 255 (fully opaque).\n@param self\n@param #number alpha An integer value for alpha from 0-255, values outside this range will be clamped",
-        "body": "canvas.set_alpha(${1:self}, ${2:alpha})"
-    },
-    "canvas.set_line_width": {
-        "prefix": "canvas.set_line_width",
-        "description": "Set the line width in pixels that all subsequent stroke operations should use. The default value for line width is 1.\n@param self\n@param #number linewidth An integer value greater than 1 indicating the pixel width.",
-        "body": "canvas.set_line_width(${1:self}, ${2:linewidth})"
-    },
-    "canvas.draw_image": {
-        "prefix": "canvas.draw_image",
-        "description": "Draw an image within the canvas directed by the user specified properties.\n@param self\n@param #string name The project relative name of the image\n@param #table attrs A table containing optional keys x(default: 0), y(default: 0), w(default: natural height), h(default: natural height), rotation(default: 0), valign(default: gre.TOP), halign(default: gre.LEFT)",
-        "body": "canvas.draw_image(${1:self}, ${2:name}, ${3:attrs})"
-    },
-    "canvas.get_image_info": {
-        "prefix": "canvas.get_image_info",
-        "description": "Get attribute information about an image\n@param self\n@param #string name The project relative name of the image\n@return A table containing the width and height keys",
-        "body": "canvas.get_image_info(${1:self}, ${2:name})"
-    },
-    "canvas.draw_text": {
-        "prefix": "canvas.draw_text",
-        "description": "Draw an string within the canvas directed by the user specified properties.\n@param self\n@param #string The text string to display\n@param #table attrs A table containing font and optional keys x(default: 0), y(default: 0), size(default: 18), color(default: 0x000000), rotation(default: 0)",
-        "body": "canvas.draw_text(${1:self}, ${2:The}, ${3:attrs})"
-    },
-    "gre.APP_ROOT": {
-        "prefix": "gre.APP_ROOT",
-        "description": "Convenience variable containing the path to the application project's\nroot directory.",
-        "body": "gre.APP_ROOT"
-    },
-    "gre.SCRIPT_ROOT": {
-        "prefix": "gre.SCRIPT_ROOT",
-        "description": "Convenience variable containing the path to the application project's\nscripts directory.",
-        "body": "gre.SCRIPT_ROOT"
-    },
-    "gre.PLUGIN_ROOT": {
-        "prefix": "gre.PLUGIN_ROOT",
-        "description": "Convenience variable containing the path to the Storyboard Engine's\nplugin directory.",
-        "body": "gre.PLUGIN_ROOT"
-    },
-    "gre.SAFE_ALIGNMENT": {
-        "prefix": "gre.SAFE_ALIGNMENT",
-        "description": "Safe alignment flag used when processing events through Lua",
-        "body": "gre.SAFE_ALIGNMENT"
-    },
-    "gre.LEFT": {
-        "prefix": "gre.LEFT",
-        "description": "Horizontal alignment value for 'left' (1)",
-        "body": "gre.LEFT"
-    },
-    "gre.CENTER": {
-        "prefix": "gre.CENTER",
-        "description": "Horizontal or vertical alignment value for 'center' (2)",
-        "body": "gre.CENTER"
-    },
-    "gre.RIGHT": {
-        "prefix": "gre.RIGHT",
-        "description": "Horizontal alignment value for 'right' (3)",
-        "body": "gre.RIGHT"
-    },
-    "gre.TOP": {
-        "prefix": "gre.TOP",
-        "description": "Vertical alignment value for 'top' (1)",
-        "body": "gre.TOP"
-    },
-    "gre.BOTTOM": {
-        "prefix": "gre.BOTTOM",
-        "description": "Vertical alignment value for 'bottom' (3)",
-        "body": "gre.BOTTOM"
-    },
-    "gre.TRANSPARENT": {
-        "prefix": "gre.TRANSPARENT",
-        "description": "Transparent value (0)",
-        "body": "gre.TRANSPARENT"
-    },
-    "gre.OPAQUE": {
-        "prefix": "gre.OPAQUE",
-        "description": "Opaque value (255)",
-        "body": "gre.OPAQUE"
-    },
-    "gre.LOG_ALWAYS": {
-        "prefix": "gre.LOG_ALWAYS",
-        "description": "Log level value. Always go to stdout (-1)",
-        "body": "gre.LOG_ALWAYS"
-    },
-    "gre.LOG_ERROR": {
-        "prefix": "gre.LOG_ERROR",
-        "description": "Log level value. Errors, fatal and non-fatal (0)",
-        "body": "gre.LOG_ERROR"
-    },
-    "gre.LOG_WARNING": {
-        "prefix": "gre.LOG_WARNING",
-        "description": "Log level value. Warnings (1)",
-        "body": "gre.LOG_WARNING"
-    },
-    "gre.LOG_INFO": {
-        "prefix": "gre.LOG_INFO",
-        "description": "Log level value. Information, one time, non-repetitive (2)",
-        "body": "gre.LOG_INFO"
-    },
-    "gre.LOG_EVENT1": {
-        "prefix": "gre.LOG_EVENT1",
-        "description": "Log level value. Event delivery, excluding motion/mtevent/redraws (3)",
-        "body": "gre.LOG_EVENT1"
-    },
-    "gre.LOG_ACTION": {
-        "prefix": "gre.LOG_ACTION",
-        "description": "Log level value. Action execution (4)",
-        "body": "gre.LOG_ACTION"
-    },
-    "gre.LOG_DIAG1": {
-        "prefix": "gre.LOG_DIAG1",
-        "description": "Log level value. Storyboard diagnostic informative (5)",
-        "body": "gre.LOG_DIAG1"
-    },
-    "gre.LOG_DIAG2": {
-        "prefix": "gre.LOG_DIAG2",
-        "description": "Log level value. Storyboard diagnostic detailed (6)",
-        "body": "gre.LOG_DIAG2"
-    },
-    "gre.LOG_EVENT2": {
-        "prefix": "gre.LOG_EVENT2",
-        "description": "Log level value. Motion/mtevent/redraw event delivery (7)",
-        "body": "gre.LOG_EVENT2"
-    },
-    "gre.LOG_TRACE1": {
-        "prefix": "gre.LOG_TRACE1",
-        "description": "Log level value. Storyboard minimal tracing (8)",
-        "body": "gre.LOG_TRACE1"
-    },
-    "gre.LOG_TRACE2": {
-        "prefix": "gre.LOG_TRACE2",
-        "description": "Log level value. Storyboard maximal tracing (9)",
-        "body": "gre.LOG_TRACE2"
-    },
-    "gre.ANIMATION_NOT_FOUND": {
-        "prefix": "gre.ANIMATION_NOT_FOUND",
-        "description": "Animation state value when an animation does not exist.\nEither it has never existed, or it was set to autodestroy",
-        "body": "gre.ANIMATION_NOT_FOUND"
-    },
-    "gre.ANIMATION_NOT_RUNNING": {
-        "prefix": "gre.ANIMATION_NOT_RUNNING",
-        "description": "Animation state value when an animation is not running.\nEither is has never been triggered, has completed, or has stopped.",
-        "body": "gre.ANIMATION_NOT_RUNNING"
-    },
-    "gre.ANIMATION_PAUSED": {
-        "prefix": "gre.ANIMATION_PAUSED",
-        "description": "Animation state value when an animation is paused.",
-        "body": "gre.ANIMATION_PAUSED"
-    },
-    "gre.ANIMATION_RUNNING": {
-        "prefix": "gre.ANIMATION_RUNNING",
-        "description": "Animation state value when an animation is running.",
-        "body": "gre.ANIMATION_RUNNING"
-    },
-    "gre.ANIMATION_COMPLETE": {
-        "prefix": "gre.ANIMATION_COMPLETE",
-        "description": "Animation state value when an animation is complete.  This state\ncan only be reached if an animation was triggered with 'cleanup'=false",
-        "body": "gre.ANIMATION_COMPLETE"
-    },
-    "gre.set_data": {
-        "prefix": "gre.set_data",
-        "description": "Sets one or more items in the Storyboard application's data manager. Each\nindex and value in the table passed in will be set in the data manager using\nthe index's name as the key.\n@param #table data A table containing the variables to change and their new values",
-        "body": "gre.set_data(${1:data})"
-    },
-    "gre.get_data": {
-        "prefix": "gre.get_data",
-        "description": "Gets one or more entries from the data manager. Each value passed in as\na parameter has a lookup in the data manager using the value as the key.\nKeys are generally string values, but tables may also be provided as arguments\nand are treated as array of keys (ie { \"key1\", \"key2\", \"key3\", ... })\nThis function returns a table using all the values as indexes and the\ncorresponding value is the data returned from the data manager. A nil is\nreturned for any values that do not match a key in the data manager.\n@param #string val1\n@param ... Data manager variables to lookup or a table of variables\n@return #table A table containing the passed in arguments as keys and the resulting data manager values as the values associated with those keys",
-        "body": "gre.get_data(${1:val1}, ${2:...})"
-    },
-    "gre.set_value": {
-        "prefix": "gre.set_value",
-        "description": "Set a variable in the data manager to a particular value. This function is a\nconvenience function on top of gre.set_data that allows the key and value to be\npassed as a set of arguments to the function instead of having to create a table\ncontaining the key/value pairs.\n@param #string key A string value containing the key to be set with the following value\n@param value The value to be assigned to the preceding key\n@param ... key/value pairs to lookup",
-        "body": "gre.set_value(${1:key}, ${2:value}, ${3:...})"
-    },
-    "gre.get_value": {
-        "prefix": "gre.get_value",
-        "description": "Get one entry from the data manager. This function is a convenience function\non top of gre.get_data that allows the value to be returned directly to the\ncaller instead of a single table return value. A nil is returned for any values\nthat do not match a key in the data manager.\n@param #string key The key whose value should be extracted from the data manager\n@return The value associated with the data manager entry for the key, or nil if no entry exists. If multiple keys are specified, then multiple return values will be generated matching the argument order",
-        "body": "gre.get_value(${1:key})"
-    },
-    "gre.resolve_data_key": {
-        "prefix": "gre.resolve_data_key",
-        "description": "This function allows Lua scripts to resolve Storyboard context variables to\na fully qualified name based on the current execution context.\n@param #string key\n@param #string ... One or more string arguments containing the variable to resolve.\n@return #table A table containing the arguments provided on input as keys with the values being the resolved data value",
-        "body": "gre.resolve_data_key(${1:key}, ${2:...})"
-    },
-    "gre.get_control_attrs": {
-        "prefix": "gre.get_control_attrs",
-        "description": "Get attributes for a control. Key name is the name of the control or a variable.\nTags can be a list of the following values: x, y, width, height, hidden, active, findex, mask\\_enabled.\nA table with the results is returned.\n@param #string control_name The fully qualified name of the control to get information about\n@param #string tags One or more tags as strings\n@return #controlattrs tag_table A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag",
-        "body": "gre.get_control_attrs(${1:control_name}, ${2:tags})"
-    },
-    "gre.set_control_attrs": {
-        "prefix": "gre.set_control_attrs",
-        "description": "Set attributes for a control. The control_name is the name of the control\nor a variable. The tag_table contains the tags and values for the attributes\nto set: x, y, width, height, hidden, active, findex, mask\\_enabled.\n@param #string control_name The fully qualified name of the control to change attributes on\n@param #controlattrs tag_table A table with tags as the keys and the new values stored as the table's key values",
-        "body": "gre.set_control_attrs(${1:control_name}, ${2:tag_table})"
-    },
-    "gre.get_table_attrs": {
-        "prefix": "gre.get_table_attrs",
-        "description": "Get attributes for a table. Key name is the name of the control or a variable.\nTags can be any of the control tags mentioned in section 6.1.12 of the Storyboard\ndocumentation and any of the following values: rows, cols, visible\\_rows, visible\\_cols,\nactive\\_row, active\\_col, row, col.\n@param #string table_name The fully qualified name of the table to get information about\n@param #string tags One or more tags as strings\n@return #tableattrs tag_table A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag",
-        "body": "gre.get_table_attrs(${1:table_name}, ${2:tags})"
-    },
-    "gre.set_table_attrs": {
-        "prefix": "gre.set_table_attrs",
-        "description": "Set attributes for a table. The table_name is the name of the control\nor a variable. The tag_table contains the tags and values for the attributes to set:\nx, y, width, height, hidden, active, rows, cols.\n@param #string table_name The fully qualified name of the table to change attributes on\n@param #tableattrs tag_table A table with tags as the keys and the new values stored as the table's key values",
-        "body": "gre.set_table_attrs(${1:table_name}, ${2:tag_table})"
-    },
-    "gre.get_table_cell_attrs": {
-        "prefix": "gre.get_table_cell_attrs",
-        "description": "Get attributes for a table cell. table_name is the name of the table.\nTags can be a list of the following values: x, y, width, height, hidden.\nA table with the results is returned.\n@param #string table_name\n@param #number row\n@param #number col\n@param #string tags\n@return #tablecellattrs A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag",
-        "body": "gre.get_table_cell_attrs(${1:table_name}, ${2:row}, ${3:col}, ${4:tags})"
-    },
-    "gre.set_table_cell_attrs": {
-        "prefix": "gre.set_table_cell_attrs",
-        "description": "Set attributes for a table cell.  This can only be applied for single column\nor single row tables and the parameters that can be modified are restricted\nin each case:\nSingle Column: The cell's x and width settings can be changed, others are ignored\nSingle Row: The cell's y and height settings can be changed, others are ignored\n@param #string table_name\n@param #number row\n@param #number col\n@param #string tag_table A table with the tags as keys and the new values stored as the table's key values",
-        "body": "gre.set_table_cell_attrs(${1:table_name}, ${2:row}, ${3:col}, ${4:tag_table})"
-    },
-    "gre.set_table_template_attrs": {
-        "prefix": "gre.set_table_template_attrs",
-        "description": "Set attributes for a table column template.  This will result in the template being changed\nand the entire table being re-laid out and re-configured.  If any changes were made to specific\ncells then those changes will be lost and need to be re-applied.\nThe tag_table contains tags and values for the attributes to set: width, height\n@param #string table_name\n@param #number row\n@param #number col\n@param #string tag_table A table with the tags as keys and the new values stored as the table's key values",
-        "body": "gre.set_table_template_attrs(${1:table_name}, ${2:row}, ${3:col}, ${4:tag_table})"
-    },
-    "gre.get_group_attrs": {
-        "prefix": "gre.get_group_attrs",
-        "description": "Get attributes for a group. Key name is the name of the group or a variable.\nTags can be a list of the following values: x, y, width, height, abs_x, abs_y, abs_width, abs_height, hidden.\nA table with the results is returned.\n@param #string group_name The fully qualified name of the group to get information about\n@param #string tags One or more tags as strings\n@return #groupattrs A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag",
-        "body": "gre.get_group_attrs(${1:group_name}, ${2:tags})"
-    },
-    "gre.set_group_attrs": {
-        "prefix": "gre.set_group_attrs",
-        "description": "Set attributes for a group. The group_name is the name of the group\nor a variable. The tag_table contains the tags and values for the attributes\nto set: x, y, hidden.\n@param #string group_name The fully qualified name of the group to change attributes on\n@param #groupattrs tag_table A table with tags as the keys and the new values stored as the table's key values",
-        "body": "gre.set_group_attrs(${1:group_name}, ${2:tag_table})"
-    },
-    "gre.get_layer_attrs": {
-        "prefix": "gre.get_layer_attrs",
-        "description": "Get attributes for a layer. Key name is the name of the layer or a variable.\nTags can be a list of the following values: x, y, width, height, xoffset, yoffset, alpha, hidden, geometry\nA table with the results is returned.\n@param #string layer_name The fully qualified name of the layer to get information about\n@param #string tags One or more tags as strings\n@return #layerattrs tag_table A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag",
-        "body": "gre.get_layer_attrs(${1:layer_name}, ${2:tags})"
-    },
-    "gre.set_layer_attrs": {
-        "prefix": "gre.set_layer_attrs",
-        "description": "Set attributes for a layer. Key name is the name of the layer or a variable.\nTable contains the tags and values for the attributes to set: x, y, width, height, xoffset, yoffset, alpha, hidden, geometry\n@param layer_name The fully qualified name of the layer to change attributes on\n@param #layerattrs tag_table A table with tags as the keys and the new values stored as the table's key values",
-        "body": "gre.set_layer_attrs(${1:layer_name}, ${2:tag_table})"
-    },
-    "gre.set_layer_attrs_global": {
-        "prefix": "gre.set_layer_attrs_global",
-        "description": "Set attributes for a layer globally on all instances of the layer on all\nscreens. The layer_name is the name of the layer or a variable. Table contains\nthe tags and values for the attributes to set: x, y, width, height, xoffset, yoffset, alpha, hidden.\n@param #string layer_name The fully qualified name of the layer to change attributes on\n@param #layerattrs tag_table A table with tags as the keys and the new values stored as the table's key values",
-        "body": "gre.set_layer_attrs_global(${1:layer_name}, ${2:tag_table})"
-    },
-    "gre.move_control": {
-        "prefix": "gre.move_control",
-        "description": "Move a control to a new position. The control_name is the name of the control\nor a variable. Setting dx and or dy\nwill move the control by the specified delta from its current position. Set an\nabsolute position using x and y by setting dx and dy to 0 or nil.\n\nOptional anchors allow for automatic adjustment of x and y values:\n* gre.LEFT anchor will not adjust the input.  This is the default behavior.\n* gre.CENTER anchor will adjust the x input by half the control width.\n* gre.RIGHT anchor will adjust the x input by the full control width.\n\n* gre.TOP anchor will not adjust the input.  This is the default behavior.\n* gre.CENTER anchor will adjust the y input by half the control height.\n* gre.BOTTOM anchor will adjust the y input by the full control height.\n\n@param #string control_name The fully qualified name of the control to move\n@param #number dx A delta from the current x position\n@param #number dy A delta from the current y position\n@param #number x The x position to move to in absolute co-ordinates (Optional).\n@param #number y The y position to move to in absolute co-ordinates (Optional)\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
-        "body": "gre.move_control(${1:control_name}, ${2:dx}, ${3:dy}, ${4:x}, ${5:y}, ${6:anchorH}, ${7:anchorV})"
-    },
-    "gre.resize_control": {
-        "prefix": "gre.resize_control",
-        "description": "Resize a control. The control_name is the name of the control\nor a variable. Setting dw and or dh will move the control by the\nspecified delta from its current position. Set an absolute position\nusing x and y by setting dw and dh to 0 or nil.\n\nOptional anchors can allow for automatic adjustment of the control's x and y to keep the control\nanchored in the desired position as the control's size change:\n* gre.LEFT anchor will not adjust the control's x position.  This is the default behavior.\n* gre.CENTER anchor will adjust the control's x position by half the difference in control width.\n* gre.RIGHT anchor will adjust the control's x position by the difference in control width.\n\n* gre.TOP anchor will not adjust the control's y position.  This is the default behavior.\n* gre.CENTER anchor will adjust the control's y position by half the difference in control height.\n* gre.BOTTOM anchor will adjust the control's y position the difference in control height.\n\n@param #string control_name The fully qualified name of the control to move\n@param #number dw A delta from the current width\n@param #number dh A delta from the current height\n@param #number w The new width of the control\n@param #number h The new width of the control\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
-        "body": "gre.resize_control(${1:control_name}, ${2:dw}, ${3:dh}, ${4:w}, ${5:h}, ${6:anchorH}, ${7:anchorV})"
-    },
-    "gre.move_layer": {
-        "prefix": "gre.move_layer",
-        "description": "Move a layer to a new position. The layer_name is the name of the layer\nor a variable that is associated with the layer name. Setting dx and or dy\nwill move the layer by the specified delta from its current position. Set an\nabsolute position using x and y by setting dx and dy to 0 or nil.\n@param #string layer_name The fully qualified name of the layer to move\n@param #number dx A delta from the current x position\n@param #number dy A delta from the current y position\n@param #number x The x position to move to in absolute co-ordinates\n@param #number y The y position to move to in absolute co-ordinates",
-        "body": "gre.move_layer(${1:layer_name}, ${2:dx}, ${3:dy}, ${4:x}, ${5:y})"
-    },
-    "gre.set_focus": {
-        "prefix": "gre.set_focus",
-        "description": "Set the focus to a control as described by its fully qualified name.\nThis function return true if the control could be found and was focusable\nand focus could be set to it. If the control can be found but is not\nfocusable then false will be returned. If the control could not be found\nthen nil will be returned.\nWhen the fully qualified name indicates the row and column of a table, then\nthis function will set the active table cell rather than adjusting the control\nfocus.\n@param #string fqn The fully qualified name of the control to receive focus\n@return #boolean true for success, false for failure or nil if an error occurs during processing",
-        "body": "gre.set_focus(${1:fqn})"
-    },
-    "gre.get_focus": {
-        "prefix": "gre.get_focus",
-        "description": "Get the fully qualified name to the control that is currently focused\nor nil if no control currently has focus.\nreturn #string The fully qualified name of the control with focus or nil if no control is focused",
-        "body": "gre.get_focus()"
-    },
-    "gre.send_event": {
-        "prefix": "gre.send_event",
-        "description": "Send an event to the application or to a Storyboard IO channel.\nChannel is an optional parameter and if channel is not passed then\nthe channel will be chosen as follows: If the environment variable\nGREIONAME is set then it will be used, otherwise the default channel is used.\ne.g.\n<code>\nlocal success, error = gre.send\\_event(event, channel) <br>\nif (not success) then <br>\n&ensp;print(error) <br>\n&ensp;gre.greio\\_disconnect(channel) <br>\nend <br>\n</code>\n@param #string event A string containing the event to send or a table containing the following fields: name, target(optional), format(optional), data(optional)\n@param #string channel An optional Storyboard IO channel to send the event on\nreturn #boolean true for success, false for failure and error message string, e.g. \"Can't open greio channel my_channel\"",
-        "body": "gre.send_event(${1:event}, ${2:channel})"
-    },
-    "gre.send_event_target": {
-        "prefix": "gre.send_event_target",
-        "description": "Send an event to a targeted model element (control, layer instance or\nscreen) using the model's fully qualified name. The channel is an optional\nparameter.\n@param #string event_name A string containing the event to send\n@param #string target A string containing the object to target the event to\n@param #string channel An optional Storyboard IO channel to send the event on\nreturn #boolean true for success, false for failure and error message string, e.g. \"Can't open greio channel my_channel\"",
-        "body": "gre.send_event_target(${1:event_name}, ${2:target}, ${3:channel})"
-    },
-    "gre.send_event_data": {
-        "prefix": "gre.send_event_data",
-        "description": "Send an event with custom data to the application or to a Storyboard IO\nchannel.\n@param #string event_name A string containing the event to send\n@param #string format_string A string format of the event data payload\n@param #table data A table whose keys match up with the keys specified in the format_string\n@param #string channel An optional Storyboard IO channel to send the event on\nreturn #boolean true for success, false for failure and error message string, e.g. \"Can't open greio channel my_channel\"",
-        "body": "gre.send_event_data(${1:event_name}, ${2:format_string}, ${3:data}, ${4:channel})"
-    },
-    "gre.add_event_listener": {
-        "prefix": "gre.add_event_listener",
-        "description": "Add an event listener to a model object\n@param #string event The name of the event to listen for\n@param #string target The fully qualified name of the model object to listen on, or the empty string to listen on the application\n@param #function callback A callback to invoke when the event is triggered, it receives the same mapargs table as a standard lua callback\nreturn #number An integer that identifies the newly created listener, or nil on failure",
-        "body": "gre.add_event_listener(${1:event}, ${2:target}, ${3:callback})"
-    },
-    "gre.remove_event_listener": {
-        "prefix": "gre.remove_event_listener",
-        "description": "Remove an event listener from a model object\n@param #number id The identifier of the listener to remove (returned from gre.add_event_listener)",
-        "body": "gre.remove_event_listener(${1:id})"
-    },
-    "gre.greio_disconnect": {
-        "prefix": "gre.greio_disconnect",
-        "description": "This function forces any cached Storyboard IO channel connections to the\nspecified channel to be closed. Subsequent calls using the same channel name\nwill re-establish the connection to the channel if required.\n@param #string channel The channel to be disconnected\n@param #boolean is_receiving An option boolean parameter. True if closing a receiving channel, false or no argument if closing a sending channel",
-        "body": "gre.greio_disconnect(${1:channel}, ${2:is_receiving})"
-    },
-    "gre.clone_object": {
-        "prefix": "gre.clone_object",
-        "description": "Create a new control or group within an existing parent (parent_name) by\ncopying all of the properties of an existing object. This new object will\nhave all of the same actions, variabless and it's current state will match\nthe state of the reference object that is being copied. The data parameter\nis a table containing control data.  The data argument is a table of\nproperties that match the properties for that type of object as described in\nthe gre.set_control_attrs or gre.set_group_attrs\n@param #string reference_object_name The name of the control or group to clone\n@param #string new_object_name The name for the new object, must be unique within the parent\n@param #string parent_name The name of the layer or group to place this object on, must already exist\n@param #table data An optional table with tags as keys and their new values as the values of the table",
-        "body": "gre.clone_object(${1:reference_object_name}, ${2:new_object_name}, ${3:parent_name}, ${4:data})"
-    },
-    "gre.delete_object": {
-        "prefix": "gre.delete_object",
-        "description": "Delete an object that has been cloned using gre.clone_object from the model.\nThe object must be a control or a group.\n@param #string object_name The name of the object to delete",
-        "body": "gre.delete_object(${1:object_name})"
-    },
-    "gre.clone_control": {
-        "prefix": "gre.clone_control",
-        "description": "Create a new control by cloning an existing control. The template_name,\nnew_control_name and layer_name are mandatory and the data parameter is\noptional. The data parameter is a table containing control data.\n@param #string template_name The name of the control to clone\n@param #string new_control_name The name for the new control, must be unique\n@param #string layer_name The name of the layer to place this control on, must already exist\n@param #table data An optional table with tags as keys and their new values as the values of the table",
-        "body": "gre.clone_control(${1:template_name}, ${2:new_control_name}, ${3:layer_name}, ${4:data})"
-    },
-    "gre.delete_control": {
-        "prefix": "gre.delete_control",
-        "description": "Delete a control from the model. The control must be a control which was\ndynamically created with the clone_control function.\n@param #string control_name The name of the control to delete",
-        "body": "gre.delete_control(${1:control_name})"
-    },
-    "gre.poly_string": {
-        "prefix": "gre.poly_string",
-        "description": "This is a higher performance function for generating a polygon string based on a set of numeric\ndata points maintained in Lua table arrays. The string returned is designed to be compatible with the Storyboard\npolygon plugin and is in the form of X1:Y1 X1:Y2 ...\n@param #list<#number> x_values\n@param #list<#number> y_values",
-        "body": "gre.poly_string(${1:x_values}, ${2:y_values})"
-    },
-    "gre.get_string_size": {
-        "prefix": "gre.get_string_size",
-        "description": "Calculate the area in pixels which the given string will occupy on the screen.\nOptionally calculate how many characters can fit into a predefined screen area.\n@param #string font\n@param #number font_size\n@param #string text\n@param #number width\n@param #table data\n@return #table A table containing the following values. width, the width of the widest rendered line. height, total height of rendered string. n\\_lines, number of lines text occupies when rendered.",
-        "body": "gre.get_string_size(${1:font}, ${2:font_size}, ${3:text}, ${4:width}, ${5:data})"
-    },
-    "gre.load_resource": {
-        "prefix": "gre.load_resource",
-        "description": "This function will force the loading of a resource, such as an image or font,\ninto the Storyboard application. This can be used in order to avoid load time\ndelays that may be incurred as resources are lazy loaded into the application.\n@param #string pool_name The name of the resource pool: image or font\n@param #string resource_name The name of the resource that is to be loaded\n@param #table pool_parameters Optional parameter that can vary depending on the pool being specified.",
-        "body": "gre.load_resource(${1:pool_name}, ${2:resource_name}, ${3:pool_parameters})"
-    },
-    "gre.dump_resource": {
-        "prefix": "gre.dump_resource",
-        "description": "This function performs the opposite of the gre.load_resource call and removes\na resource from the specified resource pool cache.\n@param #string pool_name The name of the resource pool: image or font\n@param #string resource_name The name of the resource that is to be removed",
-        "body": "gre.dump_resource(${1:pool_name}, ${2:resource_name})"
-    },
-    "gre.walk_pool": {
-        "prefix": "gre.walk_pool",
-        "description": "This function reports on the memory used by all of the resources loaded into\na particular resource pool.\n@param #string pool_name The resource pool whose content should be reported\n@return #table A table is returned with keys as the resources that are contained in the pool and values indicating the number of bytes that a particular resource is using within the system",
-        "body": "gre.walk_pool(${1:pool_name})"
-    },
-    "gre.load_image": {
-        "prefix": "gre.load_image",
-        "description": "This function will force the loading of an image into the Storyboard application.\nThis can be used in order to avoid load time delays that may be incurred as resources\nare lazy loaded into the application.\n@param #string image_name The name of the resource that is to be loaded\n@param #table parameters An optional table with the following keys: w (width), h (height), background (Whether or not to load the image asynchronously as the 'background')",
-        "body": "gre.load_image(${1:image_name}, ${2:parameters})"
-    },
-    "gre.timer_set_timeout": {
-        "prefix": "gre.timer_set_timeout",
-        "description": "This function creates a one-shot timer which fires after \"timeout\" milliseconds and\nthen executes \"function\".\n<b>For convenience porting from other environments the parameters to this\nfunction can be reversed as (function, timeout) or (timeout, function)<b>\n@param #number timeout The time in milliseconds before the timer should fire\n@param #function function The function called when the timer fires\n@return A piece of lightuserdata which serves as an identifier for the timer",
-        "body": "gre.timer_set_timeout(${1:timeout}, ${2:function})"
-    },
-    "gre.timer_set_interval": {
-        "prefix": "gre.timer_set_interval",
-        "description": "This function creates a repeating timer which fires every \"interval\" milliseconds\nand then executes \"function\".\n<b>For convenience porting from other environments the parameters to this\nfunction can be reversed as (function, interval) or (interval, function)<b>\n@param #number interval The time in milliseconds between firings\n@param #function function The function to be called when the timer fires\n@return A piece of lightuserdata which serves as an identifier for the timer",
-        "body": "gre.timer_set_interval(${1:interval}, ${2:function})"
-    },
-    "gre.timer_clear_timeout": {
-        "prefix": "gre.timer_clear_timeout",
-        "description": "This function stops an existing timer from firing.\n@param id The lightuserdata representing the timer",
-        "body": "gre.timer_clear_timeout(${1:id})"
-    },
-    "gre.timer_clear_interval": {
-        "prefix": "gre.timer_clear_interval",
-        "description": "This function stops an existing timer from firing.\n@param id The lightuserdata representing the timer",
-        "body": "gre.timer_clear_interval(${1:id})"
-    },
-    "gre.animation_create": {
-        "prefix": "gre.animation_create",
-        "description": "Create a new animation at the desired framerate (fps). The optional second\nparameter, auto_destroy, tells if the animation should be released once completed.\nIf you specify a value of 1 the animation will be released and the returned\nid is not valid once the animation has completed.  The end_callback parameter is\na function will be invoked once the animation completes.\n@param #number fps The animation framerate\n@param #boolean auto_destroy Optional parameter, (0) preserves the animation, (1) releases the animation once completed\n@param #function end_callback Optional parameter, callback function which is invoked when the animation completes\n@return An animation id to be used on future animation calls, nil on failure",
-        "body": "gre.animation_create(${1:fps}, ${2:auto_destroy}, ${3:end_callback})"
-    },
-    "gre.animation_add_step": {
-        "prefix": "gre.animation_add_step",
-        "description": "Add a step to a created animation. The id must be from a call to gre.animation_create.\nThe data parameter defines the animation step values.\n@param id The animation id\n@param #table data A table of animation step values which can include: key, rate, duration, offset, from, to, delta.",
-        "body": "gre.animation_add_step(${1:id}, ${2:data})"
-    },
-    "gre.animation_destroy": {
-        "prefix": "gre.animation_destroy",
-        "description": "Destroy the animation associated with id.\n@param id The animation to destroy",
-        "body": "gre.animation_destroy(${1:id})"
-    },
-    "gre.animation_trigger": {
-        "prefix": "gre.animation_trigger",
-        "description": "Trigger an animation to run. The id may be the value returned from\nAn optional second argument, a table with 'id', 'context', 'progress' and 'pause' keys.\n'id' is an override id used to identify the running animation which\nby default is the original animation name or id returned from gre.animation_create. (default nil)\n'context' is the context that will be used by the animation to resolve it's varables. (default nil)\n'progress' is a number from 0-1 which corresponds to the animation's progress (default 0)\n'pause' when true, the animation will begin in a paused state.  Can be used in combination\nwith the progress option to provide a seeking functionality. (default false)\n'reverse' is a boolean to indicate if the animation should run in reverse (default false)\n'cleanup' is a boolean to indicate if an animation should cleanup after completion.  (default true)\ngre.animation_create or it may be an animation name.\n@param id The animation to trigger\n@param #animationdata data An optional table with id/context/progress/pause/reverse/cleanup values",
-        "body": "gre.animation_trigger(${1:id}, ${2:data})"
-    },
-    "gre.animation_stop": {
-        "prefix": "gre.animation_stop",
-        "description": "Stop a running animation. The id may be the value returned from\ngre.animation_create or it may be an animation name.\nAn optional second argument, a table with 'id' and 'context' keys.\n'id' is an override id used to identify the running animation which\nby default is the original animation name or id returned from gre.animation_create.\n'context' is the context that will be used by the animation to resolve it's varables.\n@param id The animation to trigger\n@param #animationdata data An optional table with id/context values",
-        "body": "gre.animation_stop(${1:id}, ${2:data})"
-    },
-    "gre.animation_pause": {
-        "prefix": "gre.animation_pause",
-        "description": "Pause a running animation. The id may be the value returned from\ngre.animation_create or it may be an animation name.\nAn optional second argument, a table with 'id' and 'context' keys.\n'id' is an override id used to identify the running animation which\nby default is the original animation name or id returned from gre.animation_create.\n'context' is the context that will be used by the animation to resolve it's varables.\n\n@param id The animation to pause\n@param #animationdata data An optional table with id/context values",
-        "body": "gre.animation_pause(${1:id}, ${2:data})"
-    },
-    "gre.animation_resume": {
-        "prefix": "gre.animation_resume",
-        "description": "Resume a paused animation. The name may be the value returned from gre.animation_create or it may be an animation name.\nAn optional second argument, a table with 'id' and 'context' keys.\n'id' is an override id used to identify the running animation which\nby default is the original animation name or id returned from gre.animation_create.\n'context' is the context that will be used by the animation to resolve it's varables.\n@param id The animation to resume\n@param #animationdata data An optional table with id/context values",
-        "body": "gre.animation_resume(${1:id}, ${2:data})"
-    },
-    "gre.animation_get_state": {
-        "prefix": "gre.animation_get_state",
-        "description": "Get the state of a running animation. The name may be the value returned from\ngre.animation_create or it may be an animation name.\nAn optional second argument, a table with 'id' and 'context' keys.\n'id' is an override id used to identify the running animation which\nby default is the original animation name or id returned from gre.animation_create.\n'context' is the context that will be used by the animation to resolve it's varables.\n@param name the animation to retreive state information.\n@return #animationstate table with 'state', 'progress', 'duration' and 'reverse' values",
-        "body": "gre.animation_get_state(${1:name})"
-    },
-    "gre.animation_create_tween": {
-        "prefix": "gre.animation_create_tween",
-        "description": "Create a new animation tweening (interpolation) function.  The name of the\ntweening function cannot collide with any existing animation tweening names.\n@param #string name The name to use for the tween operation, it is case sensitive\nand must not collide with other tween names\n@param #function tween_callback The callback function to be invoked when an animation\nusing the named tween function is invoked\n@return #boolean true on successful registration",
-        "body": "gre.animation_create_tween(${1:name}, ${2:tween_callback})"
-    },
-    "gre.touch": {
-        "prefix": "gre.touch",
-        "description": "Send a touch event to the application at the co-ordinates passed in\nthrough the parameters.\n@param #number x The x position to simulate the touch\n@param #number y The y position to simulate the touch\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.touch(${1:x}, ${2:y}, ${3:channel})"
-    },
-    "gre.key_up": {
-        "prefix": "gre.key_up",
-        "description": "Send a key_up event to the application with the key code passed in the parameters.\n@param #number code The utf-8 character code to inject\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.key_up(${1:code}, ${2:channel})"
-    },
-    "gre.key_down": {
-        "prefix": "gre.key_down",
-        "description": "Send a key_down event to the application with the key code passed in the parameters.\n@param #number code The utf-8 character code to inject\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.key_down(${1:code}, ${2:channel})"
-    },
-    "gre.key_repeat": {
-        "prefix": "gre.key_repeat",
-        "description": "Send a key_repeat event to the application with the key code passed in the parameters.\n@param #number code The utf-8 character code to inject\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.key_repeat(${1:code}, ${2:channel})"
-    },
-    "gre.redraw": {
-        "prefix": "gre.redraw",
-        "description": "Force a screen redraw. Specifying a x, y, width, height of 0 will result in\na full screen refresh occuring.\n@param #number x The x position of the redraw bounding box\n@param #number y The y position of the redraw bounding box\n@param #number width The width of the redraw bounding box\n@param #number height The height of the redraw bounding box\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.redraw(${1:x}, ${2:y}, ${3:width}, ${4:height}, ${5:channel})"
-    },
-    "gre.quit": {
-        "prefix": "gre.quit",
-        "description": "Send QUIT event to application to force shutdown.\n@param #string channel An optional Storyboard IO channel to send the event on",
-        "body": "gre.quit(${1:channel})"
-    },
-    "gre.thread_create": {
-        "prefix": "gre.thread_create",
-        "description": "This function starts a new operating system thread of execution that is independent from Storyboard's main thread. The function provided as an argument indicates the starting context for this new thread of execution.\nThe Storyboard data and event (get\\_data,set\\_data,send\\_event) API are thread safe. However the execution of data changes outside of the main thread of execution can have a significant impact on performance of the application and the preferred way of synchronizing data obtained in a thread with the Storyboard UI thread is by using a Storyboard IO event and sending the data via send\\_event or send\\_event\\_data. There are no thread specific synchronization primitives, such as mutexes, for synchronizing Lua data access, serialize to the main thread using an event if this is a requirement.\nIn scenarios where a controlled shutdown and restart of a Storyboard application is required, separate threads of execution pose a synchronization challenge. In these situations all created thread(s) must have their execution interrupted and terminate in order for a clean shutdown to be observed. This can be accomplished nominally by intercepting the quit event and then taking appropriate action to flag a shutdown variable or send an unblocking event.\nThis function is not available on all systems and is not available if thread\\_create is set to nil.\n@param #function The Lua function to run in a separate thread of execution from the main UI thread",
-        "body": "gre.thread_create(${1:The})"
-    },
-    "gre.receive_event": {
-        "prefix": "gre.receive_event",
-        "description": "Receive an event from a Storyboard IO channel. This is a blocking call and works best when used on a separate Lua thread.\nReturns a table containing the name, target, format and a data table from a received event.\n@param channel A Storyboard IO channel to receive the event on\n@return #table A table containing the name, target, format and a data table from a received event",
-        "body": "gre.receive_event(${1:channel})"
-    },
-    "gre.env": {
-        "prefix": "gre.env",
-        "description": "Returns information about the storyboard runtime environment. The input can\nbe either a single string containing the key to look up or a table of keys\nfor variables to match. The following table describes the available keys:\ntarget\\_os, target\\_cpu, screen\\_width, screen\\_height, active\\_screen, render\\_caps.\n@param key_table A single string or a table of strings to look up.\n@return If a single string is provided as an input argument, just a single data value for that argument is return. If a table is provided as an input argument, then a table with key/value pairs corresponding to the keys of the input argument and the results they provide.",
-        "body": "gre.env(${1:key_table})"
-    },
-    "gre.log": {
-        "prefix": "gre.log",
-        "description": "Generate a log message that will be carried through the Storyboard engine logging system.\nThis can be more effective than using standard Lua print statements because the output can\nbe redirected to different output streams.\n@param #number id An integer value that matches the enumeration in gre/gre.h to prefix the log message with a code, or -1 to simply output the message. If a non-negative value is used, then the output will be subjected to the verbosity logging filtering.\n@param #string msg The message to output to the logging system.",
-        "body": "gre.log(${1:id}, ${2:msg})"
-    },
-    "gre.mstime": {
-        "prefix": "gre.mstime",
-        "description": "Retrieve the current time in milliseconds. This call provides a higher\nresolution than the standard Lua os.clock() or os.date() functions.\n@return #number The current time in milliseconds in a system specific manner (gre.mstime()) or the time in milliseconds since the start of the application (gre.mstime(true))",
-        "body": "gre.mstime()"
-    },
-    "gre.ustime": {
-        "prefix": "gre.ustime",
-        "description": "Retrieve the current time in microseconds. This call provides a higher\nresolution than the standard Lua os.clock() or os.date() functions.\n@return #number The current time in microseconds in a system specific manner (gre.ustime()) or the time in microseconds since the start of the application (gre.ustime(true))",
-        "body": "gre.ustime()"
-    },
-    "gre.rgb": {
-        "prefix": "gre.rgb",
-        "description": "Create a color value from separate red, green, blue and alpha color channel .\n@param #number r An integer value for red from 0-255\n@param #number g An integer value for green from 0-255\n@param #number b An integer value for blue from 0-255\n@param #number a An optional integer value for alpha from 0-255\n@return #number color An RGB color value as an integer value",
-        "body": "gre.rgb(${1:r}, ${2:g}, ${3:b}, ${4:a})"
-    },
-    "gre.to_rgb": {
-        "prefix": "gre.to_rgb",
-        "description": "Extract the red, green, blue and alpha color channels from a color\n@param #number color A color value\n@return #number red An integer from 0-255\n@return #number green An integer from 0-255\n@return #number blue An integer from 0-255\n@return #number alpha An integer from 0-255",
-        "body": "gre.to_rgb(${1:color})"
-    },
-    "gre.to_alignment": {
-        "prefix": "gre.to_alignment",
-        "description": "Generate a numeric alignment value based on a symbolic, case sensitive, alignment string\n@param #string alignment A string value of \"left\", \"right\", \"center\", \"top\" or \"bottom\"\n@return #number alignment An integer corresponding to gre.LEFT, gre.RIGHT, gre.CENTER, gre.TOP or gre.BOTTOM",
-        "body": "gre.to_alignment(${1:alignment})"
-    },
-    "gre.to_alpha": {
-        "prefix": "gre.to_alpha",
-        "description": "Generate a numeric alpha value in the range of 0 - 255 based on a percentage from 0 - 100\n@param #number percent A number from 1 - 100\n@return #number alpha An integer from 0-255",
-        "body": "gre.to_alpha(${1:percent})"
-    },
-    "gre.rtext_text_extent": {
-        "prefix": "gre.rtext_text_extent",
-        "description": "@param #string text The rich text string to extent\n@param #string target A string containing the parent control of the rich text rext you are targeting\n@param #table parameters Optional parameters: size, line-height, max-width, regular-font, bold-font, italic-font, italic-bold-font\n@return #table A table containing the keys, width and height",
-        "body": "gre.rtext_text_extent(${1:text}, ${2:target}, ${3:parameters})"
-    },
-    "gre.get_canvas": {
-        "prefix": "gre.get_canvas",
-        "description": "Get a canvas object handle by name\n@param #string Canvas object\n@return #canvas canvas A CANVAS object that represents the canvas or nil if no canvas can be found.",
-        "body": "gre.get_canvas(${1:Canvas})"
+        "body": "gredom.SCREEN"
+    },
+    "gredom.APP": {
+        "prefix": "gredom.APP",
+        "description": "Model object enumeration for Application (7)",
+        "body": "gredom.APP"
+    },
+    "gredom.get_application": {
+        "prefix": "gredom.get_application",
+        "description": "Get an object handle for the application root\n@return #domobject applicaiton The GREDOM object representing the application",
+        "body": "gredom.get_application()"
+    },
+    "gredom.get_object": {
+        "prefix": "gredom.get_object",
+        "description": "Get an object handle for the model object matching the specified fully qualified name.\n@param #string fqn The fully qualified name to the object to lookup\n@return #domobject object The GREDOM object if found, nil otherwise",
+        "body": "gredom.get_object(${1:fqn})"
+    },
+    "gredom.get_layers": {
+        "prefix": "gredom.get_layers",
+        "description": "Get a list of layers in the application\n@return #list<#layer>",
+        "body": "gredom.get_layers()"
+    },
+    "gredom.get_screens": {
+        "prefix": "gredom.get_screens",
+        "description": "Get a list of screens in the application\n@return #list<#screen>",
+        "body": "gredom.get_screens()"
+    },
+    "gredom.get_control": {
+        "prefix": "gredom.get_control",
+        "description": "If control is a @{#string} then a lookup will be performed.  If control is a @{#control}\nand the domobject represents a Storyboard Control then this method hehaves as a cast.\nReturns nil if the control cannot be found.\n@param #string control or #domobject\n@return #control control",
+        "body": "gredom.get_control(${1:control})"
+    },
+    "gredom.get_table": {
+        "prefix": "gredom.get_table",
+        "description": "If tablecontrol is a @{#string} then a lookup will be performed.  If tablecontrol is a @{#tablecontrol}\nand the domobject represents a Storyboard Table then this method hehaves as a cast.\nReturns nil if the table cannot be found.\n@param #string tablecontrol or #domobject tablecontrol\n@return #tablecontrol tablecontrol",
+        "body": "gredom.get_table(${1:tablecontrol})"
+    },
+    "gredom.get_group": {
+        "prefix": "gredom.get_group",
+        "description": "If group is a @{#string} then a lookup will be performed.  If group is a @{#group}\nand the domobject represents a Storyboard Group then this method hehaves as a cast.\nReturns nil if the group cannot be found.\n@param #string group or #domobject group\n@return #group group",
+        "body": "gredom.get_group(${1:group})"
+    },
+    "gredom.get_layer_instance": {
+        "prefix": "gredom.get_layer_instance",
+        "description": "If layerinstance is a @{#string} then a lookup will be performed.  If layerinstance is a @{#layerinstance}\nand the domobject represents a Storyboard Layer Instance then this method hehaves as a cast.\nReturns nil if the layer instance cannot be found.\n@param #string layerinstance or #domobject layerinstance\n@return #layerinstance layerinstance",
+        "body": "gredom.get_layer_instance(${1:layerinstance})"
+    },
+    "gredom.get_layer": {
+        "prefix": "gredom.get_layer",
+        "description": "If layer is a @{#string} then a lookup will be performed.  If layer is a @{#layer}\nand the domobject represents a Storyboard Layer then this method hehaves as a cast.\nReturns nil if the layer cannot be found.\n@param #string layer or #domobject layer\n@return #layer",
+        "body": "gredom.get_layer(${1:layer})"
+    },
+    "gredom.get_screen": {
+        "prefix": "gredom.get_screen",
+        "description": "If screen is a @{#string} then a lookup will be performed.  If screen is a @{#screen}\nand the domobject represents a Storyboard Screen then this method hehaves as a cast. Returns\nnil if the screen cannot be found.\n@param #string screen or #screen screen\n@return #screen",
+        "body": "gredom.get_screen(${1:screen})"
+    },
+    "domobject.get_name": {
+        "prefix": "domobject.get_name",
+        "description": "Gets the name of the specified DOM Object\n@param #domobject self\n@return #string name",
+        "body": "domobject.get_name(${1:self})"
+    },
+    "domobject.get_type": {
+        "prefix": "domobject.get_type",
+        "description": "Gets the Storyboard type of the specified DOMOBJECT.\nThe type may be one of gredom.APP, gredom.SCREEN, gredom.LAYER, gredom.LAYER_INSTANCE,\ngredom.GROUP, gredom.CONTROL, gredom.TABLE, gredom.TEMPLATE.\n@param #domobject self\n@return #number type : gredom.APP, gredom.SCREEN, gredom.LAYER, gredom.LAYER_INSTANCE, gredom.GROUP, gredom.CONTROL, gredom.TABLE or gredom.TEMPLATE",
+        "body": "domobject.get_type(${1:self})"
+    },
+    "domobject.get_parents": {
+        "prefix": "domobject.get_parents",
+        "description": "Gets the parent DOMOBJECT objects for the specified DOMOBJECT. An array ofparents is returned\nbecause in some cases, such as for a layer, there may be more thanone parent representation.\n@param #domobject self\n@return #list<#domobject>",
+        "body": "domobject.get_parents(${1:self})"
+    },
+    "domobject.get_children": {
+        "prefix": "domobject.get_children",
+        "description": "Gets the child DOMOBJECT objects for the specified DOMOBJECT.\nThis function returns only the model objects and does not include the variables.\n@param #domobject self\n@return #list<#domobject>",
+        "body": "domobject.get_children(${1:self})"
+    },
+    "domobject.get_variables": {
+        "prefix": "domobject.get_variables",
+        "description": "Gets variables associated with the specified DOMOBJECT\n@param #domobject self\n@return #list<#string> variables : A list of variable names",
+        "body": "domobject.get_variables(${1:self})"
+    },
+    "domobject.get_value": {
+        "prefix": "domobject.get_value",
+        "description": "Gets one or more entries from the data manager.  When provided multiple keys, returns multiple values.\n@usage local value = object:get_value(\"key1\", \"key2\", ...)\n@param #domobject self\n@param #string key A relative variable name (not fully qualified)\n@return the value or values returned from the data manager.",
+        "body": "domobject.get_value(${1:self}, ${2:key})"
+    },
+    "domobject.set_value": {
+        "prefix": "domobject.set_value",
+        "description": "Set the value(s).  When provided multiple key-value pairs, sets multiple values.\ne.g. object:set_value(\"key1\", value1, \"key2\", value2, ...)\n@param #domobject self\n@param #string key, A relative variable name (not fully qualified)\n@param value the value to be assigned",
+        "body": "domobject.set_value(${1:self}, ${2:key,}, ${3:value})"
+    },
+    "domobject.get_data": {
+        "prefix": "domobject.get_data",
+        "description": "Gets one or more entries from the data manager. Each value passed in as\na parameter is first fully qualified, then is used as the key to lookup in the data manager.\nThis function returns a table using all the values as indexes and the\ncorresponding value is the data returned from the data manager. A nil is\nreturned for any values that do not match a key in the data manager.\ne.g. local data = object:get_data(\"key1\", \"key2\", ...)\n@param #domobject self\n@param #string key A relative variable name (not fully qualified)\n@return a table with key-value pairs where the provided keys are the table indices.",
+        "body": "domobject.get_data(${1:self}, ${2:key})"
+    },
+    "domobject.set_data": {
+        "prefix": "domobject.set_data",
+        "description": "Sets one or more items in the Storyboard application's data manager. Each\nkey should be relative to the object.  The key-value pairs will be set in the data manager.\ne.g. object:set_data({grd_x=100, grd_y=0, image=\"images/down.png\"})\n@param #domobject self\n@param #table data A table with multiple key-value pairs where the key's are relative to the object.",
+        "body": "domobject.set_data(${1:self}, ${2:data})"
+    },
+    "domobject.key": {
+        "prefix": "domobject.key",
+        "description": "Gets the fully qualified key for the provided relative key.  This function does not ensure that the key is valid.\n@param #domobject self\n@param #string key A key relative to the object\n@return #string A fully qualified key",
+        "body": "domobject.key(${1:self}, ${2:key})"
+    },
+    "control.get_hidden": {
+        "prefix": "control.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#control}\n@param #control self\n@return #boolean hidden",
+        "body": "control.get_hidden(${1:self})"
+    },
+    "control.get_x": {
+        "prefix": "control.get_x",
+        "description": "Get the value of grd_x for this @{#control}\n@param #control self\n@return #number x",
+        "body": "control.get_x(${1:self})"
+    },
+    "control.get_y": {
+        "prefix": "control.get_y",
+        "description": "Get the value of grd_y for this @{#control}\n@param #control self\n@return #number y",
+        "body": "control.get_y(${1:self})"
+    },
+    "control.get_width": {
+        "prefix": "control.get_width",
+        "description": "Get the value of grd_width for this @{#control}\n@param #control self\n@return #number width",
+        "body": "control.get_width(${1:self})"
+    },
+    "control.get_height": {
+        "prefix": "control.get_height",
+        "description": "Get the value of grd_height for this @{#control}\n@param #control self\n@return #number height",
+        "body": "control.get_height(${1:self})"
+    },
+    "control.get_position": {
+        "prefix": "control.get_position",
+        "description": "Get the value of grd_x and grd_y for this @{#control}\n@param #control self\n@return #number x\n@return #number y",
+        "body": "control.get_position(${1:self})"
+    },
+    "control.get_size": {
+        "prefix": "control.get_size",
+        "description": "Get the value of grd_width and grd_height for this @{#control}\n@param #control self\n@return #number width\n@return #number height",
+        "body": "control.get_size(${1:self})"
+    },
+    "control.get_bounds": {
+        "prefix": "control.get_bounds",
+        "description": "Get the value of grd_x, grd_y, grd_height and grd_width for this @{#control}\n@param #control self\n@return #number x\n@return #number y\n@return #number width\n@return #number height",
+        "body": "control.get_bounds(${1:self})"
+    },
+    "control.set_hidden": {
+        "prefix": "control.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#control}\n@param #control self\n@param #boolean hidden",
+        "body": "control.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "control.set_x": {
+        "prefix": "control.set_x",
+        "description": "Set the value of grd_x for this @{#control}\n\nAn optional anchor allows for automatic adjustment of x values:\n* grd.LEFT anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the x input by half the control width.\n* grd.RIGHT anchor will adjust the x input by the full control width.\n\n@param #control self\n@param #number x\n@param #number anchor Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)",
+        "body": "control.set_x(${1:self}, ${2:x}, ${3:anchor})"
+    },
+    "control.set_y": {
+        "prefix": "control.set_y",
+        "description": "Set the value of grd_y for this @{#control}\n\nAn optional anchor allows for automatic adjustment of y values:\n* grd.TOP anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the y input by half the control height.\n* grd.BOTTOM anchor will adjust the y input by the full control height.\n\n@param #control self\n@param #number y\n@param #number anchor Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_y(${1:self}, ${2:y}, ${3:anchor})"
+    },
+    "control.set_width": {
+        "prefix": "control.set_width",
+        "description": "Set the value of grd_width for this @{#control}\n\nAn optional anchor can allow for automatic adjustment of the control's x to keep the\ncontrol anchored in the desired position as the control's width changes:\n* grd.LEFT anchor will not adjust the control's x position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's x position by half the difference in control width.\n* grd.RIGHT anchor will adjust the control's x position by the difference in control width.\n\n@param #control self\n@param #number width\n@param #number anchor Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)",
+        "body": "control.set_width(${1:self}, ${2:width}, ${3:anchor})"
+    },
+    "control.set_height": {
+        "prefix": "control.set_height",
+        "description": "Set the value of grd_height for this @{#control}\n\nAn optional anchor can allow for automatic adjustment of the control's y to keep the\ncontrol anchored in the desired position as the control's height changes:\n* grd.TOP anchor will not adjust the control's y position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's y position by half the difference in control height.\n* grd.BOTTOM anchor will adjust the control's y position the difference in control height.\n\n@param #control self\n@param #number height\n@param #number anchor Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_height(${1:self}, ${2:height}, ${3:anchor})"
+    },
+    "control.set_position": {
+        "prefix": "control.set_position",
+        "description": "Set the position of this @{#control} by setting the value of grd_x and grd_y\n\nOptional anchors allow for automatic adjustment of x and y values:\n* grd.LEFT anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the x input by half the control width.\n* grd.RIGHT anchor will adjust the x input by the full control width.\n\n* grd.TOP anchor will not adjust the input.  This is the default behavior.\n* grd.CENTER anchor will adjust the y input by half the control height.\n* grd.BOTTOM anchor will adjust the y input by the full control height.\n\n@param #control self\n@param #number x\n@param #number y\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_position(${1:self}, ${2:x}, ${3:y}, ${4:anchorH}, ${5:anchorV})"
+    },
+    "control.set_size": {
+        "prefix": "control.set_size",
+        "description": "Set the size of this @{#control} by setting the value of grd_width and grd_height\n\nOptional anchors can allow for automatic adjustment of the control's x and y to keep the\ncontrol anchored in the desired position as the control's size change:\n* grd.LEFT anchor will not adjust the control's x position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's x position by half the difference in control width.\n* grd.RIGHT anchor will adjust the control's x position by the difference in control width.\n\n* grd.TOP anchor will not adjust the control's y position.  This is the default behavior.\n* grd.CENTER anchor will adjust the control's y position by half the difference in control height.\n* grd.BOTTOM anchor will adjust the control's y position the difference in control height.\n\n@param #control self\n@param #number width\n@param #number height\n@param #number anchorH Horizontal anchor: gre.LEFT, gre.CENTER, gre.RIGHT (Optional, default is gre.LEFT)\n@param #number anchorV Vertical anchor: gre.TOP, gre.CENTER, gre.BOTTOM (Optional, default is gre.TOP)",
+        "body": "control.set_size(${1:self}, ${2:width}, ${3:height}, ${4:anchorH}, ${5:anchorV})"
+    },
+    "control.set_bounds": {
+        "prefix": "control.set_bounds",
+        "description": "Set the bounds of this @{#control} by setting the value of grd_x, grd_y, grd_width and grd_height\n@param #control self\n@param #number x\n@param #number y\n@param #number width\n@param #number height",
+        "body": "control.set_bounds(${1:self}, ${2:x}, ${3:y}, ${4:width}, ${5:height})"
+    },
+    "control.hide": {
+        "prefix": "control.hide",
+        "description": "Hide this @{#control} by setting grd_hidden to true.\n@param #control self",
+        "body": "control.hide(${1:self})"
+    },
+    "control.show": {
+        "prefix": "control.show",
+        "description": "Show this @{#control} by setting grd_hidden to false.\n@param #control self",
+        "body": "control.show(${1:self})"
+    },
+    "control.clone": {
+        "prefix": "control.clone",
+        "description": "Clone the Storyboard Control represented by this @{#control}.\n@param #control self\n@param #string new_name the name of the new control (not fully qualified)\n@param #string parent_name the name of the group or layer to contain the new control\n@param #table data A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag\n@return #control the newly created control",
+        "body": "control.clone(${1:self}, ${2:new_name}, ${3:parent_name}, ${4:data})"
+    },
+    "control.delete": {
+        "prefix": "control.delete",
+        "description": "Delete the Storyboard Control represented by this @{#control}.  Must be a clone.\n@param #control self",
+        "body": "control.delete(${1:self})"
+    },
+    "tablecontrol.get_rows": {
+        "prefix": "tablecontrol.get_rows",
+        "description": "Get the value of grd_rows for this @{#tablecontrol}\n@param #tablecontrol self\n@return #number rows",
+        "body": "tablecontrol.get_rows(${1:self})"
+    },
+    "tablecontrol.get_cols": {
+        "prefix": "tablecontrol.get_cols",
+        "description": "Get the value of grd_cols for this @{#tablecontrol}\n@param #tablecontrol self\n@return #number cols",
+        "body": "tablecontrol.get_cols(${1:self})"
+    },
+    "tablecontrol.cell_key": {
+        "prefix": "tablecontrol.cell_key",
+        "description": "Gets the fully qualified key for the provided key at the specified row and col.  This function does not ensure that the key is valid.\n@param #tablecontrol self\n@param #number row\n@param #number cell\n@param #string key relative to the current\n@return #string Fully qualified cell key",
+        "body": "tablecontrol.cell_key(${1:self}, ${2:row}, ${3:cell}, ${4:key})"
+    },
+    "group.get_hidden": {
+        "prefix": "group.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#group}\n@param #group self\n@return #boolean hidden",
+        "body": "group.get_hidden(${1:self})"
+    },
+    "group.get_x": {
+        "prefix": "group.get_x",
+        "description": "Get the value of grd_x for this @{#group}\n@param #group self\n@return #number x",
+        "body": "group.get_x(${1:self})"
+    },
+    "group.get_y": {
+        "prefix": "group.get_y",
+        "description": "Get the value of grd_y for this @{#group}\n@param #group self\n@return #number y",
+        "body": "group.get_y(${1:self})"
+    },
+    "group.get_abs_x": {
+        "prefix": "group.get_abs_x",
+        "description": "Get the value of grd_abs_x for this @{#group}\n@param #group self\n@return #number abs_x",
+        "body": "group.get_abs_x(${1:self})"
+    },
+    "group.get_abs_y": {
+        "prefix": "group.get_abs_y",
+        "description": "Get the value of grd_abs_y for this @{#group}\n@param #group self\n@return #number abs_y",
+        "body": "group.get_abs_y(${1:self})"
+    },
+    "group.get_width": {
+        "prefix": "group.get_width",
+        "description": "Get the value of grd_width for this @{#group}\n@param #group self\n@return #number width",
+        "body": "group.get_width(${1:self})"
+    },
+    "group.get_height": {
+        "prefix": "group.get_height",
+        "description": "Get the value of grd_height for this @{#group}\n@param #group self\n@return #number height",
+        "body": "group.get_height(${1:self})"
+    },
+    "group.get_abs_width": {
+        "prefix": "group.get_abs_width",
+        "description": "Get the value of grd_abs_width for this @{#group}\n@param #group self\n@return #number abs_width",
+        "body": "group.get_abs_width(${1:self})"
+    },
+    "group.get_abs_height": {
+        "prefix": "group.get_abs_height",
+        "description": "Get the value of grd_abs_height for this @{#group}\n@param #group self\n@return #number abs_height",
+        "body": "group.get_abs_height(${1:self})"
+    },
+    "group.set_hidden": {
+        "prefix": "group.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#group}\n@param #group self\n@param #boolean hidden\n@return",
+        "body": "group.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "group.set_x": {
+        "prefix": "group.set_x",
+        "description": "Set the value of grd_x for this @{#group}\n@param #group self\n@param #number x",
+        "body": "group.set_x(${1:self}, ${2:x})"
+    },
+    "group.set_y": {
+        "prefix": "group.set_y",
+        "description": "Set the value of grd_y for this @{#group}\n@param #group self\n@param #number y",
+        "body": "group.set_y(${1:self}, ${2:y})"
+    },
+    "group.hide": {
+        "prefix": "group.hide",
+        "description": "Hide this @{#group} by setting grd_hidden to true.\n@param #group self",
+        "body": "group.hide(${1:self})"
+    },
+    "group.show": {
+        "prefix": "group.show",
+        "description": "Show this @{#group} by setting grd_hidden to false.\n@param #group self",
+        "body": "group.show(${1:self})"
+    },
+    "group.clone": {
+        "prefix": "group.clone",
+        "description": "Clone the Storyboard Group represented by this @{#group}.\n@param #group self\n@param #string new_name the name of the new group (not fully qualified)\n@param #string parent_name the name of the layer to contain the new group\n@param #table data A table containing the tags as keys with the associated table value being the Storyboard value associated with that tag\n@return #group the newly created group",
+        "body": "group.clone(${1:self}, ${2:new_name}, ${3:parent_name}, ${4:data})"
+    },
+    "group.delete": {
+        "prefix": "group.delete",
+        "description": "Delete the Storyboard Group represented by this @{#group}.  Must be a clone.\n@param #group self",
+        "body": "group.delete(${1:self})"
+    },
+    "layerinstance.get_layer": {
+        "prefix": "layerinstance.get_layer",
+        "description": "Get the @{#layer} for this @{#layerinstance}\n@param #layerinstance self\n@return #layer",
+        "body": "layerinstance.get_layer(${1:self})"
+    },
+    "layerinstance.get_hidden": {
+        "prefix": "layerinstance.get_hidden",
+        "description": "Get the value of grd_hidden for this @{#layerinstance}\n@param #layerinstance self\n@return #boolean hidden",
+        "body": "layerinstance.get_hidden(${1:self})"
+    },
+    "layerinstance.get_x": {
+        "prefix": "layerinstance.get_x",
+        "description": "Get the value of grd_x for this @{#layerinstance}\n@param #layerinstance self\n@return #number x",
+        "body": "layerinstance.get_x(${1:self})"
+    },
+    "layerinstance.get_y": {
+        "prefix": "layerinstance.get_y",
+        "description": "Get the value of grd_y for this @{#layerinstance}\n@param #layerinstance self\n@return #number y",
+        "body": "layerinstance.get_y(${1:self})"
+    },
+    "layerinstance.get_width": {
+        "prefix": "layerinstance.get_width",
+        "description": "Get the value of grd_width for this @{#layerinstance}\n@param #layerinstance self\n@return #number width",
+        "body": "layerinstance.get_width(${1:self})"
+    },
+    "layerinstance.get_height": {
+        "prefix": "layerinstance.get_height",
+        "description": "Get the value of grd_height for this @{#layerinstance}\n@param #layerinstance self\n@return #number height",
+        "body": "layerinstance.get_height(${1:self})"
+    },
+    "layerinstance.get_position": {
+        "prefix": "layerinstance.get_position",
+        "description": "Get the value of grd_x and grd_y for this @{#layerinstance}\n@param #layerinstance self\n@return #number x\n@return #number y",
+        "body": "layerinstance.get_position(${1:self})"
+    },
+    "layerinstance.get_size": {
+        "prefix": "layerinstance.get_size",
+        "description": "Get the value of grd_width and grd_height for this @{#layerinstance}\n@param #layerinstance self\n@return #number width\n@return #number height",
+        "body": "layerinstance.get_size(${1:self})"
+    },
+    "layerinstance.get_bounds": {
+        "prefix": "layerinstance.get_bounds",
+        "description": "Get the value of grd_x, grd_y, grd_height and grd_width for this @{#layerinstance}\n@param #layerinstance self\n@return #number x\n@return #number y\n@return #number width\n@return #number height",
+        "body": "layerinstance.get_bounds(${1:self})"
+    },
+    "layerinstance.get_alpha": {
+        "prefix": "layerinstance.get_alpha",
+        "description": "Get the value of grd_alpha for this @{#layerinstance}\n@param #layerinstance self\n@return #number alpha [0-255]",
+        "body": "layerinstance.get_alpha(${1:self})"
+    },
+    "layerinstance.set_hidden": {
+        "prefix": "layerinstance.set_hidden",
+        "description": "Set the value of grd_hidden for this @{#layerinstance}\n@param #layerinstance self\n@param #boolean hidden",
+        "body": "layerinstance.set_hidden(${1:self}, ${2:hidden})"
+    },
+    "layerinstance.set_x": {
+        "prefix": "layerinstance.set_x",
+        "description": "Set the value of grd_x for this @{#layerinstance}\n@param #layerinstance self\n@param #number x",
+        "body": "layerinstance.set_x(${1:self}, ${2:x})"
+    },
+    "layerinstance.set_y": {
+        "prefix": "layerinstance.set_y",
+        "description": "Set the value of grd_y for this @{#layerinstance}\n@param #layerinstance self\n@param #number y",
+        "body": "layerinstance.set_y(${1:self}, ${2:y})"
+    },
+    "layerinstance.set_width": {
+        "prefix": "layerinstance.set_width",
+        "description": "Set the value of grd_width for this @{#layerinstance}\n@param #layerinstance self\n@param #number width",
+        "body": "layerinstance.set_width(${1:self}, ${2:width})"
+    },
+    "layerinstance.set_height": {
+        "prefix": "layerinstance.set_height",
+        "description": "Set the value of grd_height for this @{#layerinstance}\n@param #layerinstance self\n@param #number height",
+        "body": "layerinstance.set_height(${1:self}, ${2:height})"
+    },
+    "layerinstance.set_position": {
+        "prefix": "layerinstance.set_position",
+        "description": "Set the position of this @{#layerinstance} by setting the value of grd_x and grd_y\n@param #layerinstance self\n@param #number x\n@param #number y",
+        "body": "layerinstance.set_position(${1:self}, ${2:x}, ${3:y})"
+    },
+    "layerinstance.set_size": {
+        "prefix": "layerinstance.set_size",
+        "description": "Set the size of this @{#layerinstance} by setting the value of grd_width and grd_height\n@param #layerinstance self\n@param #number width\n@param #number height",
+        "body": "layerinstance.set_size(${1:self}, ${2:width}, ${3:height})"
+    },
+    "layerinstance.set_bounds": {
+        "prefix": "layerinstance.set_bounds",
+        "description": "Set the bounds of this @{#layerinstance} by setting the value of grd_x, grd_y, grd_width and grd_height\n@param #layerinstance self\n@param #number x\n@param #number y\n@param #number width\n@param #number height",
+        "body": "layerinstance.set_bounds(${1:self}, ${2:x}, ${3:y}, ${4:width}, ${5:height})"
+    },
+    "layerinstance.set_alpha": {
+        "prefix": "layerinstance.set_alpha",
+        "description": "Set the value of grd_alpha for this @{#layerinstance}\n@param #layerinstance self\n@param #number alpha [0-255]",
+        "body": "layerinstance.set_alpha(${1:self}, ${2:alpha})"
+    },
+    "layerinstance.hide": {
+        "prefix": "layerinstance.hide",
+        "description": "Hide this @{#layerinstance} by setting grd_hidden to true.\n@param #layerinstance self",
+        "body": "layerinstance.hide(${1:self})"
+    },
+    "layerinstance.show": {
+        "prefix": "layerinstance.show",
+        "description": "Show this @{#layerinstance} by setting grd_hidden to false.\n@param #layerinstance self",
+        "body": "layerinstance.show(${1:self})"
     }
 }

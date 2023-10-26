@@ -28,7 +28,10 @@ def generate_alias():
 	# loop aliases and copy data over
 	for alias in aliases[key]:
 		new_key = f"{alias}.{cmd}"
-		snippet_data[new_key] = snippet_data[active_key]
+		snippet_data[new_key] = {}
+		snippet_data[new_key]['prefix'] = new_key
+		snippet_data[new_key]['description'] = snippet_data[active_key]['description']
+		snippet_data[new_key]['body'] = new_key
 
 def generate_body():
 	body = ''
