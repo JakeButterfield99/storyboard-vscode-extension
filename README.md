@@ -1,6 +1,6 @@
 # Crank Storyboard VS Code Extension
 
-This extension will auto-complete lua snippets for Crank Storyboard. This includes any gre. or gredom. types & functions. Currently supporting Storyboard 8.1.
+This extension will auto-complete lua & teal snippets for Crank Storyboard. This includes any gre. or gredom. types & functions. Currently supporting Storyboard 8.1.
 
 ### Usage
 
